@@ -2,6 +2,9 @@
     .bars_btn{
         display: block;
     }
+    #search_icon{
+        fill: #fff;
+    }
     .nav_links{
         display: none !important;
     }
@@ -20,7 +23,7 @@
         width: 100%;
     }
     .image_slider_box {
-        height: 60vh !important;
+        height: 40vh !important;
     }
     .collection_box .inner_box{
         justify-content: center !important;
@@ -29,6 +32,9 @@
 @media screen and (min-width: 874px) {
     .slider_cart.to_left {
         left: 80% !important;
+    }
+    #search_icon{
+        fill: #2C3E50;
     }
 }
 @media screen and (max-width: 1079px) {
@@ -41,6 +47,6 @@
         justify-content: space-around !important;
     }
     .image_slider_box {
-        height: 90vh !important;
+        height: 50vh !important;
     }
 }

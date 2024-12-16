@@ -11,9 +11,18 @@
     height: auto;
     width: 100%;
 }
-
+.clr-i-outline{
+    fill: #fff;
+}
+.li .icon{
+    color: #2C3E50;
+    font-weight: unset;
+}
+.icon_m{
+    color: #fff;
+}
 .container-fluid nav{
-    background-color: #023047;
+    background-color: #2C3E50;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +33,6 @@
     top: 0%;
     width: 100%;
     z-index: 999999;
-    box-shadow: 0 4px 15px #496a7a;
 }
 .container-fluid nav .nav_links{
     display: flex;
@@ -144,7 +152,7 @@ input::placeholder{
     height: 100%;
     transform: translateX(-100%);
     transition: all .3s ease;
-    background-color: #8ecae6;
+    background-color: #ECF0F1;
     color: #023047;
     left: 0;
     width: 100%;
