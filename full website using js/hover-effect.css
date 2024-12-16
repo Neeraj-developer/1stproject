@@ -1,0 +1,50 @@
+/* navbar dropdown hover effects */
+
+.hover_link li:hover{
+    border: 1px solid  white;
+}
+/* end */
+
+/* searchbtn over eftect */
+
+#search_icon:hover{
+    background-color: rgb(69 121 147);
+    color: #fff;
+}
+
+
+/* this is return to shop hover effect */
+.cart_main_content span {
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #023047;
+    background-color: transparent;
+    transition: color 0.6s;
+    position: relative;
+    overflow: hidden; 
+}
+.cart_main_content span:hover {
+    color: #fff; 
+}
+.cart_main_content span::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: -100%;
+    height: 100%; 
+    width: 100%; 
+    background-color: #023047; 
+    z-index: -1;
+    transition: left 0.6s ease;
+}
+.cart_main_content span:hover::before {
+    left: 0; 
+}
+/* end effect */
+
+/* cart slide close btn effect */
+
+#cart_closebtn:hover{
+    transform: rotate(180deg);
+}

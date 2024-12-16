@@ -1,0 +1,59 @@
+.image_slider_box {
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden; 
+}
+.image_slider_box i:nth-child(1) {
+    left: 20px;
+}
+.image_slider_box i:nth-child(2) {
+    right: 20px;
+}
+.image_slider_box .frame {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.image_slider_box .frame .slider_inner {
+    display: flex;
+    transition: all .5s linear;
+    height: 100% !important;
+    width: 100% !important;
+}
+.image_slider_box .frame .slider_inner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    flex: 0 0 100%;
+}
+.image_dot_box{
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 50;
+}
+.image_dot_box .image_dot{
+    height: 6px;
+    width: 19px;
+    border: 1px solid white;
+    cursor: pointer;
+    cursor: pointer;
+    transition: all .5s linear;
+}
+.image_slider_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    color: #fff; /* Ensure arrow color is visible */
+    font-size: 36px !important;
+    cursor: pointer;
+    z-index: 10000; /*Ensure arrows are on top*/
+    padding: 10px; /* Add padding to make it clickable */
+    border-radius: 50%; /* Optional: rounded buttons */
+}

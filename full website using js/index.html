@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopify website</title>
+    <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="active.css">
+    <link rel="stylesheet" href="mediauery.css">
+    <link rel="stylesheet" href="slide-cart.css">
+    <link rel="stylesheet" href="image-slider.css">
+    <link rel="stylesheet" href="hover-effect.css">
+    <link rel="stylesheet" href="collection.css">
+    <!-- <link rel="stylesheet" href="add-to-cart.css"> -->
+     <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="loader" class="loader">
+        <p><dotlottie-player src="https://lottie.host/bd981e4b-8227-4e67-9e13-5b90bac9e128/6xtpHsy26M.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay>
+        </dotlottie-player></p>
+    </div>
+    <div class="container-fluid content" id="content">
+        <nav>
+        <!-- nav links -->
+        <div class="nav_links">
+            <ul class="ul main_links">
+                <li>Home</li>
+                <li class="li">Product <i class="fa-solid fa-angle-down" id="icon"></i>
+                    <ul class="ul hover_link">
+                        <li>Shampoo</li>
+                        <li>Conditioner</li>
+                        <li>Soap</li>
+                        <li>Lotion</li>
+                    </ul>
+                </li>
+                <li>About Us</li>
+                <li class="li">Services <i class="fa-solid fa-angle-down"></i>
+                    <ul class="hover_link">
+                        <li>Pest Control</li>
+                        <li>Home Cleaning</li>
+                        <li>Maintenance</li>
+                        <li>Gardening</li>
+                    </ul>
+                </li>
+                <li>Contact Us</li>
+            </ul>
+            
+        </div> 
+        <!-- responsive  -->
+         <button class="bars_btn" id="bar"><i class="fa-solid fa-bars"></i></button>
+         <div class="slide" id="slide">
+            <button class="closebtn" id="closebtn"><i class="fa-solid fa-xmark"></i></button>
+            <ul class="ul" id="ul_block">
+                <li>Home</li>
+                <li class="li">Product <i class="fa-solid fa-plus" id="icon"></i>
+                    <ul class="ul hover_link">
+                        <li>Shampoo</li>
+                        <li>Conditioner</li>
+                        <li>Soap</li>
+                        <li>Lotion</li>
+                    </ul>
+                </li>
+                <li>About Us</li>
+                <li class="li">Services <i class="fa-solid fa-plus"></i>
+                    <ul class="hover_link">
+                        <li>Pest Control</li>
+                        <li>Home Cleaning</li>
+                        <li>Maintenance</li>
+                        <li>Gardening</li>
+                    </ul>
+                </li>
+                <li>Contact Us</li>
+            </ul>
+         </div>
+         <!-- search bar overlay -->
+       <div class="search_overlay_div" id="search_overlay_div"></div>
+
+         <div class="search_box" id="search_btn">
+            <input type="search" placeholder="search here" id="input">
+            <i class="fa-solid fa-search" id="search_icon"></i>
+            <i class="fa-solid fa-xmark" id="searchclose"></i>
+        </div>
+
+        <!-- cart icon -->
+         <div class="cart_box">
+            <a href="#" class="profile_icon">
+                <svg fill="#fff" width="28px" height="28px" viewBox="0 0 1.26 1.26" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>user-line</title><path d="M0.63 0.595a0.245 0.245 0 1 0 -0.245 -0.245 0.245 0.245 0 0 0 0.245 0.245m0 -0.42a0.175 0.175 0 1 1 -0.175 0.175 0.175 0.175 0 0 1 0.175 -0.175" class="clr-i-outline clr-i-outline-path-1"/><path d="M1.066 0.853a0.601 0.601 0 0 0 -0.873 0A0.07 0.07 0 0 0 0.175 0.901V1.085a0.07 0.07 0 0 0 0.07 0.07h0.77a0.07 0.07 0 0 0 0.07 -0.07v-0.184a0.07 0.07 0 0 0 -0.019 -0.048M1.015 1.085H0.245v-0.184a0.531 0.531 0 0 1 0.77 0Z" class="clr-i-outline clr-i-outline-path-2"/><path x="0" y="0" width="36" height="36" fill-opacity="0" d="M0 0H1.26V1.26H0V0z"/></svg>
+            </a>
+            <button class="cart_btn" id="cart_btn">
+                <svg width="28px" height="28px" viewBox="0 0 1 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="icomoon-ignore"/><path d="M0.957 0.3H0.257L0.2 0.067H0.043v0.033h0.131l0.162 0.67a0.083 0.083 0 0 0 -0.06 0.08 0.083 0.083 0 1 0 0.167 0c0 -0.019 -0.006 -0.036 -0.017 -0.05h0.234a0.083 0.083 0 0 0 -0.017 0.05 0.083 0.083 0 1 0 0.083 -0.083H0.37l-0.016 -0.067h0.468L0.957 0.3zM0.41 0.85c0 0.028 -0.022 0.05 -0.05 0.05s-0.05 -0.022 -0.05 -0.05 0.022 -0.05 0.05 -0.05 0.05 0.022 0.05 0.05m0.367 0a0.05 0.05 0 0 1 -0.1 0 0.05 0.05 0 0 1 0.1 0m-0.431 -0.183L0.265 0.333h0.646L0.797 0.667z" fill="#fff"/></svg>
+                <sup class="cart_item_count" id="cart_item_count">0</sup>
+            </button>
+         </div>
+       </nav>
+
+       <!-- slide cart -->
+        <!-- overlay div -->
+
+       <div class="overlay_div" id="overlay_div"></div>
+
+       <div class="slider_cart" id="slider_cart">
+        <div class="slider_content">
+            <div class="top_text">
+                <span>My Cart</span>
+                <span id="cart_closebtn"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="cart_main_content">
+                    <dotlottie-player src="https://lottie.host/a45867b2-b21f-424d-a1cd-4fee9dd470c4/I9aM8TdsQY.lottie" background="transparent" speed="1" style="width: 100%; height: 150px" loop autoplay></dotlottie-player>
+                    <p>Your cart is empty</p>
+                    <span id="ret_shop_btn">Return To Shop</span>
+            </div>
+        </div>
+       </div>
+
+       <!-- end navbar -->
+
+
+       <!-- imageslider started -->
+
+       <div class="image_slider_box">
+            <i class="fa-solid fa-angle-left" id="left_slide"></i>
+            <i class="fa-solid fa-angle-right" id="right_slide"></i>
+            <div class="frame">
+                <div class="slider_inner" id="slider_inner">
+                    <img src="slider-images/1stbanner.jpg" class="slider_images" alt="Banner 1">
+                    <img src="slider-images/2banner.jpg" class="slider_images" alt="Banner 2">
+                    <img src="slider-images/3banner.jpg" class="slider_images" alt="Banner 3">
+                    <img src="slider-images/1stbanner.jpg" class="slider_images" alt="Banner 4">
+                    <img src="slider-images/2banner.jpg" class="slider_images" alt="Banner 5">
+                </div>
+            </div>
+            <div class="image_dot_box" id="image_dot_box">
+                <!-- dots are created by javascript  -->
+            </div>
+        </div>
+        
+        <!-- product section stated -->
+
+        <!-- <div class="render_data">
+            <div class="product_box" id="product_box">
+
+            </div>
+        </div> -->
+
+        <!-- collection product section started -->
+
+        <div class="collection_box">
+            <h1>Our Popular Products</h1>
+            <div class="inner_box container" id="productContainer">
+                <!-- proudct are display array method in js -->
+            </div>
+
+            <div class="load_more">
+                <div class="more_btn">Load More</div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="script.js"></script>
+    <script src="collection.js"></script>
+    <!-- <script src="add-to-cart.js"></script> -->
+     <!-- Bootstrap Bundle with Popper JS -->
+     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</body>
+</html>
