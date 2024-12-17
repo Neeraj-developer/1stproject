@@ -133,7 +133,8 @@ input::placeholder{
 .cart_btn sup{
     position: absolute;
     right: 0px;
-    background-color: #023047;
+    background-color: #2C3E50;
+    height: 14px;
     font-size: 14px;
 }
 

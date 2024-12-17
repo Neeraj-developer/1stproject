@@ -1,34 +1,34 @@
 // Product Data Array
 const products = [
     {
-        name: "Red Men Shoes",
-        price: "Rs.999.00",
-        image: "https://porto-demo5.myshopify.com/cdn/shop/products/GreyMenSportsCap1_200x200_crop_center.jpg?v=1599495679"
+        name: "Women's Printed Dress",
+        price: "Rs.399.00",
+        image: "https://images.bewakoof.com/t1080/women-s-white-all-over-printed-oversized-dress-582002-1726836740-1.jpg"
     },
     {
-        name: "Blue Sports Shoes",
-        price: "Rs.1,299.00",
-        image: "https://via.placeholder.com/200"
+        name: "Men's Black T-shirt",
+        price: "Rs.499.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-t-shirt-106-1701423878-1.jpg"
     },
     {
-        name: "Black Running Shoes",
-        price: "Rs.1,499.00",
-        image: "https://via.placeholder.com/200"
+        name: "Black Sports Shoes",
+        price: "Rs.1,095.00",
+        image: "https://images.bewakoof.com/t1080/men-s-black-sports-shoes-651218-1729070381-1.jpg"
     },
     {
-        name: "Green Casual Shoes",
-        price: "Rs.799.00",
-        image: "https://via.placeholder.com/200"
+        name: "Men's Black Joggers",
+        price: "Rs.1,199.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-joggers-330841-1727418974-1.jpg"
     },
     {
-        name: "Red Men Shoes",
-        price: "Rs.999.00",
-        image: "https://porto-demo5.myshopify.com/cdn/shop/products/GreyMenSportsCap1_200x200_crop_center.jpg?v=1599495679"
+        name: "Women's Brown Jacket",
+        price: "Rs.1,699.00",
+        image: "https://images.bewakoof.com/t640/women-s-brown-dramatic-graphic-printed-super-loose-jacket-597102-1725341520-1.jpg"
     },
     {
-        name: "Blue Sports Shoes",
-        price: "Rs.1,299.00",
-        image: "https://via.placeholder.com/200"
+        name: " Printed Oversized T-shirt",
+        price: "Rs.899.00",
+        image: "https://images.bewakoof.com/t640/women-s-granite-green-bambi-sketch-graphic-printed-oversized-t-shirt-647243-1733230733-1.jpg"
     }
 ];
 

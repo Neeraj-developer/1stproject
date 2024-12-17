@@ -216,18 +216,18 @@ rightBtn.addEventListener('click', () => {
 
 // autoslide 1sr image slider
 
-let slideInterval;
+// let slideInterval;
 
-const startSlideShow = () => {
-    slideInterval = setInterval(() => {
-        if (slideNumbar < slideImgLength) {
-            slideNumbar++; // Move to the next slide
-        } else {
-            slideNumbar = 1; // Loop back to the first slide
-        }
-        changeColor();
-        slider_inner.style.transform = `translateX(-${(slideNumbar - 1) * 100}%)`;
-    }, 5000);
-}
-startSlideShow();
+// const startSlideShow = () => {
+//     slideInterval = setInterval(() => {
+//         if (slideNumbar < slideImgLength) {
+//             slideNumbar++; // Move to the next slide
+//         } else {
+//             slideNumbar = 1; // Loop back to the first slide
+//         }
+//         changeColor();
+//         slider_inner.style.transform = `translateX(-${(slideNumbar - 1) * 100}%)`;
+//     }, 7000);
+// }
+// startSlideShow();
 

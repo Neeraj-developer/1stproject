@@ -1,5 +1,5 @@
 .image_slider_box {
-    height: 50vh;
+    height: 70vh;
     width: 100%;
     position: relative;
     overflow: hidden; 
@@ -26,6 +26,7 @@
     width: 100%;
     object-fit: cover;
     flex: 0 0 100%;
+    object-position: center;
 }
 .image_dot_box{
     height: 50px;
