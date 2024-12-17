@@ -143,7 +143,6 @@ input::placeholder{
 .fa-minus{
     margin-left: 4px;
 }
-/* responsive */
 .slide{
     position: fixed;
     z-index: 999;
