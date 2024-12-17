@@ -44,18 +44,10 @@ async function getData() {
         btnEle.addEventListener('click', () => addToCart(ele.image, ele.price));
     });
 }
-
-// Function to Add Items to Cart
 function addToCart(img, price) {
-    // Add item to cart array
     cartItems.push({ img: img, price: price });
-
-    // Remove empty cart message
     emptyContent.classList.add('empty_rem');
-
-    // Update cart item count
     dynamicCount.innerText = cartItems.length;
-
     // Create Cart Elements
     let cartItemContainer = document.createElement("div");
     cartItemContainer.style.display = "flex";
@@ -90,6 +82,4 @@ function addToCart(img, price) {
     // Append container to cart
     renderCartData.appendChild(cartItemContainer);
 }
-
-// Initialize Function
 getData();

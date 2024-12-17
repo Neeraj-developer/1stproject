@@ -39,7 +39,6 @@ const container = document.getElementById("productContainer");
 products.forEach((product, index) => {
     const productCard = document.createElement("div");
     productCard.classList.add("coll_box");
-
     productCard.innerHTML = `
         <div class="img_box">
             <img src="${product.image}" alt="${product.name}">
@@ -58,17 +57,13 @@ products.forEach((product, index) => {
             <p>${product.price}</p>
         </div>
     `;
-
-    // Append Product Card to Container
     container.appendChild(productCard);
 });
-
 // mouseover effect slider
 const proBox = document.querySelectorAll('.coll_box');
 const cartAnimate = document.querySelectorAll('.cart_animate');
 const quickLinkBtn = document.querySelectorAll('.quick_btn');
 const fav_icon = document.querySelectorAll('.fav_icon');
-
 // Hover effect in product box
 if (proBox && quickLinkBtn) {
     proBox.forEach((box, index) => {
@@ -76,14 +71,12 @@ if (proBox && quickLinkBtn) {
             quickLinkBtn[index]?.classList.add('transform');
             cartAnimate[index]?.classList.add('transfor_cart');
         });
-
         box.addEventListener('mouseleave', () => {
             quickLinkBtn[index]?.classList.remove('transform');
             cartAnimate[index]?.classList.remove('transfor_cart');
         });
     });
 }
-
 // Handle clicking the favorite icon
 if (fav_icon) {
     fav_icon.forEach((icon, index) => {
@@ -91,15 +84,12 @@ if (fav_icon) {
             // Get product info to save to localStorage
             const product = products[index];
             let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
             // Check if the product is already in favorites
             const isFavorited = favorites.some(fav => fav.name === product.name);
-
             if (isFavorited) {
                 // Remove from favorites if already added
                 favorites = favorites.filter(fav => fav.name !== product.name);
-                console.log(`${product.name} removed from favorites`);
-
+                console.log(`${product.name} removed from favorites`)
                 // Update icon
                 icon.classList.remove('fa-solid');
                 icon.classList.add('fa-regular');
@@ -112,21 +102,17 @@ if (fav_icon) {
                 icon.classList.remove('fa-regular');
                 icon.classList.add('fa-solid');
             }
-
             // Save updated favorites array to localStorage
             localStorage.setItem('favorites', JSON.stringify(favorites));
         });
     });
 }
-
 // Optional: Load favorite state on page load
 document.addEventListener("DOMContentLoaded", () => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    
     fav_icon.forEach((icon, index) => {
         const product = products[index];
         const isFavorited = favorites.some(fav => fav.name === product.name);
-
         // Set the icon to solid (filled heart) if product is in favorites
         if (isFavorited) {
             icon.classList.remove('fa-regular');

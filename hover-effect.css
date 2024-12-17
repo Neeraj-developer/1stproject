@@ -1,19 +1,11 @@
-/* navbar dropdown hover effects */
-
 .hover_link li:hover{
     border: 1px solid  white;
 }
-/* end */
-
-/* searchbtn over eftect */
-
 #search_icon:hover{
     background-color: rgb(69 121 147);
     color: #fff;
 }
-
-
-/* this is return to shop hover effect */
+this is return to shop hover effect */
 .cart_main_content span {
     padding: 8px;
     font-size: 14px;
@@ -41,10 +33,6 @@
 .cart_main_content span:hover::before {
     left: 0; 
 }
-/* end effect */
-
-/* cart slide close btn effect */
-
 #cart_closebtn:hover{
     transform: rotate(180deg);
 }

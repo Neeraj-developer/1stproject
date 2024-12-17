@@ -137,16 +137,13 @@ input::placeholder{
     height: 14px;
     font-size: 14px;
 }
-
 .fa-plus{
     margin-left: 4px;
 }
 .fa-minus{
     margin-left: 4px;
 }
-
 /* responsive */
-
 .slide{
     position: fixed;
     z-index: 999;
@@ -160,7 +157,6 @@ input::placeholder{
     z-index: 99999;
     top: 0;
 }
-
 .slide .closebtn{
     background: transparent;
     position: absolute;
@@ -179,7 +175,6 @@ input::placeholder{
     gap: 30px;
     margin: 35px 0 0 20px;
 }
-
 .bars_btn{
     font-size: 27px;
     background: transparent;

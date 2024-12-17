@@ -1,11 +1,8 @@
-
-/* Product Section Styling */
 .render_data {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
 #product_box {
     display: flex;
     align-items: center;
@@ -14,7 +11,6 @@
     gap: 20px;
     width: 90%;
 }
-
 .product_item {
     border: 1px solid #ddd;
     height: fit-content;
@@ -25,29 +21,24 @@
     text-align: center;
     transition: transform 0.3s ease;
 }
-
 .product_item:hover {
     transform: translateY(-5px);
 }
-
 .myImages {
     width: 100%;
     height: 300px;
     object-fit: cover;
     object-position: center;
 }
-
 .product_title {
     font-size: 14px;
     font-weight: bold;
     margin: 10px 0 0 0;
 }
-
 .product_price {
     color: #023047;
     margin: 5px 0;
 }
-
 button {
     padding: 10px;
     background-color: #3498db;
@@ -58,12 +49,9 @@ button {
     font-size: 14px;
     transition: background-color 0.3s ease;
 }
-
 button:hover {
     background-color: #2980b9;
 }
-
-/* Cart Section */
 .cart_main_content {
     margin: 20px auto;
     max-width: 600px;
@@ -77,12 +65,10 @@ button:hover {
     margin-right: 10px;
     object-fit: contain;
 }
-
 .fa-trash {
     color: red;
     cursor: pointer;
 }
-
 .empty_rem {
     display: none;
 }

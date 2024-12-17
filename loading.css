@@ -11,7 +11,6 @@
     justify-content: center;
     z-index: 9999; /* Ensure it covers all content */
 }
-
 .spinner {
     width: 50px;
     height: 50px;
@@ -26,8 +25,6 @@
         transform: rotate(360deg);
     }
 }
-
-/* Main Content Hidden Initially */
 .content {
     display: none;
 }

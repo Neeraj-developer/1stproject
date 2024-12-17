@@ -9,9 +9,7 @@ window.addEventListener('load', () => {
         document.getElementById('content').style.display = 'block';
     }, 2000); // 5 seconds delay
 });
-
 const hoverItems = document.querySelectorAll('.li');
-
 // Loop through each parent <li>
 hoverItems.forEach((item) => {
     const dropdown = item.querySelector('.hover_link'); // The dropdown <ul>
@@ -43,10 +41,7 @@ hoverItems.forEach((item) => {
         }
     });
 });
-
-
 // responsive cliked bar
-
 const bars = document.getElementById('bar')
 const slide = document.getElementById('slide')
 const closebtn = document.getElementById('closebtn')
@@ -63,9 +58,7 @@ closebtn.addEventListener('click', () => {
         slide.classList.remove('slideopen')
     }
 });
-
 // searchbtn close or open using according to window.innerwidh
-
 const search_btn = document.getElementById('search_btn');
 const input = document.getElementById('input');
 const search_icon = document.getElementById('search_icon');
@@ -88,15 +81,13 @@ function handleSearchClose() {
     searchclose.classList.remove('closeshow');
     search_overlay_div.classList.remove('search_overlay');
 }
-
-// search_overlay_div.addEventListener('click', () => {
-//     search_btn.classList.remove('show');
-//     input.classList.remove('inputshow');
-//     search_icon.classList.remove('search_icon_bg');
-//     searchclose.classList.remove('closeshow');
-//     search_overlay_div.classList.remove('search_overlay');
-// })
-
+search_overlay_div.addEventListener('click', () => {
+    search_btn.classList.remove('show');
+    input.classList.remove('inputshow');
+    search_icon.classList.remove('search_icon_bg');
+    searchclose.classList.remove('closeshow');
+    search_overlay_div.classList.remove('search_overlay');
+})
 // Function to add or remove event listeners based on window width
 function updateEventListeners() {
     if (window.innerWidth <= 874) {
@@ -109,13 +100,10 @@ function updateEventListeners() {
         searchclose.removeEventListener('click', handleSearchClose);
     }
 }
-
 // Initial check when the page loads
 updateEventListeners();
-
 // Update event listeners when the window is resized
 window.addEventListener('resize', updateEventListeners);
-
 // slide right to left
 const cart_btn = document.getElementById("cart_btn");
 const cart_closebtn = document.getElementById("cart_closebtn");
@@ -129,57 +117,43 @@ cart_btn.addEventListener("click", () => {
     slider_cart.classList.add('to_left');
     overlay_div.classList.add('remove_overlay');
 });
-
 // to hide cart slide
 cart_closebtn.addEventListener('click', () => {
     slider_cart.classList.remove('to_left');
     overlay_div.classList.remove('remove_overlay');
 });
-
 // to hide cart slide click the return the shop btn
 ret_shop_btn.addEventListener('click', () => {
     slider_cart.classList.remove('to_left');
     overlay_div.classList.remove('remove_overlay');
 });
-
 // overlay click
-
 overlay_div.addEventListener("click", () => {
     slider_cart.classList.remove('to_left');
     overlay_div.classList.remove('remove_overlay');
 
 })
-
 // image slider
-
 const leftBtn = document.getElementById('left_slide');
 const rightBtn = document.getElementById('right_slide');
 const slider_inner = document.getElementById('slider_inner');
-
 const images = document.querySelectorAll('.slider_images');
 let slideNumbar = 1; // Starts at the first image
 const slideImgLength = images.length; // Total number of images
-
 // for loop for dots 
-
 const sliderDotsBox = document.getElementById('image_dot_box');
-
 for (let i = 0; i < slideImgLength; i++) {
     const imageDots = document.createElement('div');
     imageDots.className = 'image_dot';
     sliderDotsBox.appendChild(imageDots);
 };
-
 const imageDotBtns = document.querySelectorAll('.image_dot');
-
 imageDotBtns[0].style.backgroundColor = 'white';
-
 function resetBg() {
     imageDotBtns.forEach((imageDotBtn) => {
         imageDotBtn.style.backgroundColor = 'transparent'
     });
 }
-
 imageDotBtns.forEach((imageDotBtn, i) => {
     imageDotBtn.addEventListener('click', () => {
         resetBg();
@@ -213,21 +187,18 @@ rightBtn.addEventListener('click', () => {
     changeColor();
     slider_inner.style.transform = `translateX(-${(slideNumbar - 1) * 100}%)`;
 });
-
 // autoslide 1sr image slider
+let slideInterval;
 
-// let slideInterval;
-
-// const startSlideShow = () => {
-//     slideInterval = setInterval(() => {
-//         if (slideNumbar < slideImgLength) {
-//             slideNumbar++; // Move to the next slide
-//         } else {
-//             slideNumbar = 1; // Loop back to the first slide
-//         }
-//         changeColor();
-//         slider_inner.style.transform = `translateX(-${(slideNumbar - 1) * 100}%)`;
-//     }, 7000);
-// }
-// startSlideShow();
-
+const startSlideShow = () => {
+    slideInterval = setInterval(() => {
+        if (slideNumbar < slideImgLength) {
+            slideNumbar++; // Move to the next slide
+        } else {
+            slideNumbar = 1; // Loop back to the first slide
+        }
+        changeColor();
+        slider_inner.style.transform = `translateX(-${(slideNumbar - 1) * 100}%)`;
+    }, 7000);
+}
+startSlideShow();
