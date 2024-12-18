@@ -1,0 +1,172 @@
+.sel_link_box{
+    height: fit-content;
+    max-height: 50px;
+    width: 100%;
+    background-color: #34495E;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99999999;
+}
+.sel_link_box.fixed{
+    position: fixed;
+}
+#filter_box_slide{
+    background-color: #2C3E50;
+    color: #ccc;
+    padding: 10px 8px;
+}
+#cros_fil_slide{
+    cursor: pointer;
+}
+/* Remove the default arrow in select */
+select {
+    -webkit-appearance: none; /* For Safari and Chrome */
+    -moz-appearance: none; /* For Firefox */
+    appearance: none; /* Standard Syntax */
+    background: none; /* Removes any default styling */
+    padding: 5px 10px; 
+    border: 1px solid #ccc; 
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+}
+select option{
+    color: #2C3E50;
+}
+
+/* Style to hide the arrow completely */
+select::-ms-expand {
+    display: none; /* For Internet Explorer */
+}
+
+.link_inner .sel_link{
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+}
+.sel_link_box .select_options{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+   /* Hide the checkbox */
+   #filter_box {
+    display: none;
+}
+
+/* Styling for the filter button */
+.filter_box {
+    display: inline-block;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    transform: translateX(0);
+    transition: transform .4s ease;
+}
+.fill_app_box.dis_none_mob{
+    position: fixed;
+    /* right: 0; */
+    transform: translateX(0%);
+    z-index: 999999;
+    display: flex !important;
+    background: #fff;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100vh;
+    max-height: 100vh;
+}
+/* Flex styling for the button content */
+.main_filter_btn {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+/* Icon rotation transition */
+.fil_drop_icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+/* When checkbox is checked, rotate the icon */
+#filter_box:checked + .filter_box .fil_drop_icon {
+    transform: rotate(90deg);
+}
+/* filter box */
+.fill_app_box{
+    position: fixed;
+    right: 0;
+    transition: transform .3s ease;
+    transform: translateX(100%);
+    top: 123px;
+    max-height: 80vh;
+    height: 80vh;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 20%;
+    background-color: #fff;
+    z-index: 999;
+}
+.fill_app_box.sliding{
+    transform: translateX(0);
+    z-index: 999999;
+    transition: transform .3s ease;
+    background-color: #fff;
+
+}
+.filter_sort_by ul{
+    list-style-type: none;
+}
+.filter_sort_by ul li{
+    font-size: 16px;
+    margin-top: 6px;
+    display: flex;
+    gap: 3px;
+}
+li input, label{
+    cursor: pointer;
+}
+
+.filter_size_by ul{
+    list-style-type: none;
+}
+.filter_size_by ul li{
+    font-size: 16px;
+    margin-top: 6px;
+    display: flex;
+    gap: 3px;
+}
+.fill_btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    left: 0;
+}
+.same_btns{
+    padding: 4px 43px;
+    border: 1px solid #2C3E50;
+    text-align: center;
+    cursor: pointer;
+}
+/* Style when the checkbox is checked */
+input[type="checkbox"]:checked + label {
+    color: #ccc; /* Text color changes when checked */
+}
+
+/* Style when the checkbox is unchecked */
+input[type="checkbox"]:not(:checked) + label {
+    color: #2C3E50; /* Default color when unchecked */
+}
+.main_filter_btn{
+    color: #fff !important;
+}

@@ -56,5 +56,5 @@
     cursor: pointer;
     z-index: 10000; /*Ensure arrows are on top*/
     padding: 10px; /* Add padding to make it clickable */
-    border-radius: 50%; /* Optional: rounded buttons */
+    background-color: #34495E;
 }

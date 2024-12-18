@@ -2,8 +2,8 @@
     border: 1px solid  white;
 }
 #search_icon:hover{
-    background-color: rgb(69 121 147);
     color: #fff;
+    cursor: pointer;
 }
 .cart_main_content span {
     padding: 8px;

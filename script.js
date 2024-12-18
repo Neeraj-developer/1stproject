@@ -148,7 +148,7 @@ for (let i = 0; i < slideImgLength; i++) {
     sliderDotsBox.appendChild(imageDots);
 };
 const imageDotBtns = document.querySelectorAll('.image_dot');
-imageDotBtns[0].style.backgroundColor = 'white';
+imageDotBtns[0].style.backgroundColor = '#2C3E50';
 function resetBg() {
     imageDotBtns.forEach((imageDotBtn) => {
         imageDotBtn.style.backgroundColor = 'transparent'
@@ -165,7 +165,7 @@ imageDotBtns.forEach((imageDotBtn, i) => {
 
 function changeColor(){
     resetBg();
-    imageDotBtns[slideNumbar - 1].style.backgroundColor = 'white'
+    imageDotBtns[slideNumbar - 1].style.backgroundColor = '#2C3E50'
 }
 
 leftBtn.addEventListener('click', () => {
@@ -202,3 +202,61 @@ const startSlideShow = () => {
     }, 7000);
 }
 startSlideShow();
+// this is for filtercontainer
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("resize ");
+    
+    let filterBtn = document.getElementById("filter_box");
+    let filSlide = document.getElementById("fill_app_box");
+    let cros_fil_slide = document.getElementById("cros_fil_slide");
+    let slide_filter_btn = document.getElementById("main_filter_btn");
+
+    // this is for filter input checked
+
+    if (window.innerWidth < 874) {
+        function forMobile(){
+            console.log("less");
+            filterBtn.addEventListener('click', () => {
+                filSlide.classList.toggle('dis_none_mob');  //
+                if (filSlide.classList.contains('dis_none_mob')) {
+                    console.log("fixed position");
+                    filSlide.classList.add('dis_none_mob')
+                    console.log("Class 'dis_none_mob' is added.");
+                } else {
+                    filSlide.classList.remove('dis_none_mob')
+                    console.log("Class 'dis_none_mob' is removed.");
+                }
+            });
+            cros_fil_slide.addEventListener('click', () => {
+                filterBtn.click();
+                console.log("cross btn cliked");
+            })
+            slide_filter_btn.addEventListener("click", () => {
+                filterBtn.click();
+                console.log("slide filter clicked");
+            })
+        };
+        forMobile();
+    } else{
+        function fillSlide(){
+            let sel_link_box = document.getElementById("sel_link_box");
+            console.log("else condition");
+            
+            if (!filSlide.classList.contains('sliding')){
+                sel_link_box.classList.add('fixed');
+                filSlide.classList.add('sliding');
+                document.body.style.overflowX = ""; 
+            } else{
+                sel_link_box.classList.remove('fixed');
+                filSlide.classList.remove('sliding');
+                document.body.style.overflowX = "hidden"; 
+            }
+        }
+        filterBtn.addEventListener("click", () => {
+            fillSlide();
+            console.log("filter btn click scren size is more");
+            
+        });
+    };
+});
