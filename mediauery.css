@@ -2,11 +2,17 @@
     .bars_btn{
         display: block;
     }
+    .collection_box{
+        padding: 50px 15px !important;
+    }
     #search_icon{
         fill: #fff;
     }
     .nav_links{
         display: none !important;
+    }
+    #right_slide, #left_slide{
+        opacity: 0;
     }
     .search_box input{
         display: none;

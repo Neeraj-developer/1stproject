@@ -159,7 +159,7 @@ input::placeholder{
 .slide .closebtn{
     background: transparent;
     position: absolute;
-    right: 20px;
+    right: 18px;
     top: 20px;
     font-size: 27px;
     cursor: pointer;
@@ -168,7 +168,7 @@ input::placeholder{
 .slide #ul_block {
     list-style: none;
     height: 100%;
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -181,4 +181,16 @@ input::placeholder{
     border: none;
     display: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid nav{
+        padding: 10px 18px;
+    }
+    .sel_link_box{
+        padding: 0px 18px;
+    }
+    .sel_link_box .select_options{
+        padding: 0;
+    }
 }
