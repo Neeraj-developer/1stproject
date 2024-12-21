@@ -1,4 +1,5 @@
-.countdown_timer{
+/* Countdown Timer Styles */
+.countdown_timer {
     height: auto;
     width: 100%;
     background-color: transparent;
@@ -7,34 +8,39 @@
     justify-content: center;
     padding: 50px;
 }
-.timer_inner{
+
+.timer_inner {
     width: 70%;
-    height: 100%;
+    height: auto;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 20px;
 }
-.timer_inner p{
+
+.timer_inner p {
     font-size: 40px;
     color: #2C3E50;
     font-weight: bold;
 }
-.timer_inner .des{
+
+.timer_inner .des {
     font-size: 17px;
     color: #2C3E50;
     text-align: center;
     font-weight: 500;
 }
-.main-timer{
+
+.main-timer {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     height: auto;
 }
-.main-timer .time_box{
+
+.main-timer .time_box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +48,8 @@
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.main-timer .time_box input{
+
+.main-timer .time_box input {
     height: 80px;
     width: 80px;
     text-align: center;
@@ -51,35 +58,38 @@
     border: none;
     color: #2C3E50;
 }
-.time_box span{
+
+.time_box span {
     font-size: 17px;
     font-weight: 500;
 }
-.timer_inner .notify_box{
-    width: 100%;
+
+.timer_inner .notify_box {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
-.timer_inner .notify_box form{
+
+.timer_inner .notify_box form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
-.timer_inner .notify_box form input{
+
+.timer_inner .notify_box form input {
     height: 40px;
     font-size: 15px;
     font-weight: 500;
     padding: 0 10px;
     width: 364px;
-    border: 1px solid  #2C3E50;
+    border: 1px solid #2C3E50;
     background-color: transparent;
-    border-right: none;
     outline: none;
 }
-.timer_inner .notify_box form button{
+
+.timer_inner .notify_box form button {
     height: 40px;
     font-size: 15px;
     font-weight: 500;
@@ -89,12 +99,13 @@
     color: #fff;
     cursor: pointer;
 }
-/* hover effect */
 
-.timer_inner .notify_box form button:hover{
+/* Hover effect */
+.timer_inner .notify_box form button:hover {
     background-color: #34495E;
 }
 
+/* Popup Styles */
 .popup {
     display: none;
     position: fixed;
@@ -112,38 +123,67 @@
     transition: all .5s ease;
 }
 
-.popup button {
-    margin-top: 10px;
+.popup .popup-content {
+    padding: 20px;
+}
+
+.popup img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
 .popup p {
-    margin: 0;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
 }
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup button:hover {
+    background-color: #34495E;
+}
+
 .countdown_timer.hidden {
     display: none;
 }
 
-
-@media screen and (max-width:768px) {
-    .timer_inner{
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .timer_inner {
         width: 100%;
     }
-    .timer_inner p{
+
+    .timer_inner p {
         text-align: center;
     }
-    .main-timer .time_box input{
+
+    .main-timer .time_box input {
         height: 60px;
         width: 60px;
     }
-    .countdown_timer{
+
+    .countdown_timer {
         padding: 50px 10px;
     }
-    .timer_inner .notify_box form input{
+
+    .timer_inner .notify_box form input {
         width: 100%;
     }
-    .timer_inner .notify_box form{
+
+    .timer_inner .notify_box form {
         justify-content: flex-end;
         gap: 10px;
     }
 }
-

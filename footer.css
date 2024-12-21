@@ -1,4 +1,102 @@
-.footer{
-    background-color: #34495E;
-    
+/* 34495E */
+.footer_section{
+    background-color: #2C3E50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+}
+.footer_section .footer_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.footer_content .box1{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    height: 100%;
+    gap: 10px;
+}
+.footer_content .box1 p{
+    font-size: 20px;
+}
+.footer_content .box1 ul{
+    list-style-type: none;
+}
+.footer_content .box1 ul li{
+    margin-top: 6px;
+    transition: all .2s ease;
+}
+.footer_content .box1 ul li a{
+    font-size: 17px;
+}
+.footer_content .social_icon ul{
+    display: flex;
+    gap: 10px;
+}
+.copright_box{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.copright_box span{
+    font-size: 17px;
+}
+.copright_box i{
+    margin: 0 5px 0 5px;
+}
+.footer_content .box1 ul li:hover{
+    color: #ccc;
+}
+.footer_content .box1 ul li a:hover{
+    color: #ccc;
+}
+.copright_box i{
+    cursor: text;
+}
+
+@media screen and (max-width: 768px) {
+    .footer_content .box1{
+        width: 100%;
+    }
+    .footer_content .box1 p{
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    .footer_content .box1 ul{
+        width: 100%;
+        text-align: center;
+    }
+    .footer_content .box1 ul li{
+        margin-top: 6px;
+    }
+    .footer_content .box1 ul li a{
+        font-size: 17px;
+    }
+    .footer_content .social_icon ul{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer_content{
+        gap: 30px;
+    }
+    .copright_box{
+        margin-top: 30px;
+        padding: 6px 0;
+    }
+    .copright_box span{
+        text-align: center;
+    }
 }

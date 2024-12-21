@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailForm = document.getElementById('emailForm');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popupMessage');
-
+    const popupImage = document.getElementById('popupImage');
+    
     // Check if email exists in localStorage
     const storedEmail = localStorage.getItem('userEmail');
 
@@ -40,8 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('userEmail', email);
             // Hide the form and countdown timer
             countdownTimer.classList.add('hidden');
-            // Show success popup
-            popupMessage.textContent = 'Thank you for subscribing! You will be notified once we launch.';
+            // Show success popup with user email
+            popupMessage.textContent = `Thank you for subscribing, ${email}! You will be notified once we launch.`;
+            popupImage.src = 'your-image-url.jpg'; // Set the image source
             showPopup();
 
             // Send the email address to the backend for scheduling notifications
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to send a request to backend to schedule email notifications
     function scheduleEmailNotifications(email) {
-        // Here we send a request to the backend (e.g., using fetch API)
+        // Send request to the backend (e.g., using fetch API)
         fetch('https://your-backend-url.com/schedule-email', {
             method: 'POST',
             headers: {
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let diff = Math.max((enddate - now) / 1000, 0); // Ensure no negative time
 
         if (diff <= 0) {
-            // Reset countdown for the next 12:00 AM
+            // Reset countdown for the next midnight
             enddate = getNextMidnight();
             diff = (enddate - now) / 1000; // Recalculate difference
         }

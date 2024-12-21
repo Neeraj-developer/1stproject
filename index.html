@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="hover-effect.css">
     <link rel="stylesheet" href="collection.css">
     <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="timer.css">
     <link rel="stylesheet" href="multiimagesslider.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -240,10 +241,11 @@
         </div>
 
         <!-- timer with bg video -->
+        <!-- Countdown Timer Section -->
         <div class="countdown_timer">
             <div class="timer_inner">
                 <p>Add New Feature every 24/7</p>
-                <span class="des">We are working hard to make an awesome website with lot of intutive features. Subscribe below to get notified when we launch and get some huge discounts as a beta tester.</span>
+                <span class="des">We are working hard to make an awesome website with lots of intuitive features. Subscribe below to get notified when we launch and get some huge discounts as a beta tester.</span>
                 <div class="main-timer">
                     <div class="hours_box time_box">
                         <input type="text" value="00" readonly>
@@ -251,7 +253,7 @@
                     </div>
                     <div class="Mintues_box time_box">
                         <input type="text" value="00" readonly>
-                        <span>Mintue</span>
+                        <span>Minute</span>
                     </div>
                     <div class="seconds_box time_box">
                         <input type="text" value="00" readonly>
@@ -261,18 +263,21 @@
                 <div class="notify_box">
                     <form id="emailForm">
                         <input type="email" id="emailInput" placeholder="Enter Your Email">
-                        <button onclick="closePopup()">Notify Me</button>
+                        <button type="submit">Notify Me</button>
                     </form>
                 </div>
-               
             </div>
         </div>
 
         <!-- Popup Modal -->
         <div id="popup" class="popup">
-            <p id="popupMessage">ajjfhiuefodjo</p>
-            <button onclick="closePopup()">Close</button>
+            <div class="popup-content">
+                <img id="popupImage" src="" alt="Image" />
+                <p id="popupMessage"></p>
+                <button onclick="closePopup()">OK</button>
+            </div>
         </div>
+
 
 
 
@@ -288,6 +293,47 @@
                 <div class="more_btn">Load More</div>
             </div>
         </div>
+
+
+
+
+
+        <!-- footer section -->
+         <div class="footer_section">
+            <div class="footer_content">
+                <div class="box1">
+                    <p>Quick Link :</p>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contect Us</a></li>
+                    </ul>
+                </div>
+                <div class="box1">
+                    <p>Contact Us :</p>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope"></i> Email : DeveloperNeeraj@gmail.com</li>
+                        <li><i class="fa-solid fa-phone"></i> Phone : 7988303104</li>
+                        <li><i class="fa-solid fa-map-location-dot"></i> Address : #52, Ranjit Nagar, Ambala City, Haryna</li>
+                    </ul>
+                </div>
+                <div class="box1 social_icon">
+                    <p>Follow Us :</p>
+                    <ul>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+                <!-- <div class="box1"></div> -->
+            </div>
+            <div class="copright_box">
+                <span>Created By Neeraj kumar <i class="fa-regular fa-copyright"></i> 2024 | All right Reserved.</span>
+            </div>
+         </div>
 
 
     <script src="script.js"></script>
