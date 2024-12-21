@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="hover-effect.css">
     <link rel="stylesheet" href="collection.css">
     <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="timer.css">
+    <link rel="stylesheet" href="multiimagesslider.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -106,9 +108,37 @@
                 <span id="cart_closebtn"><svg width="25" height="25" viewBox="0 0 0.75 0.75" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.419.375.616.178A.031.031 0 1 0 .572.134L.375.331.178.134a.031.031 0 0 0-.044.044l.197.197-.197.197a.03.03 0 0 0 0 .044.03.03 0 0 0 .044 0L.375.419l.197.197a.03.03 0 0 0 .044 0 .03.03 0 0 0 0-.044Z" style="fill:#fff"/></svg></span>
             </div>
             <div class="cart_main_content">
+                <!-- if cart is empty -->
                     <dotlottie-player src="https://lottie.host/a45867b2-b21f-424d-a1cd-4fee9dd470c4/I9aM8TdsQY.lottie" background="transparent" speed="1" style="width: 100%; height: 150px" loop autoplay></dotlottie-player>
                     <p>Your cart is empty</p>
-                    <span id="ret_shop_btn">Return To Shop</span>
+                    <span id="ret_shop_btn">Return To Shop</span> 
+
+                <!-- else -->
+                <div class="cart_item">
+                    <div class="remove_item">
+                        <svg width="20" height="20" viewBox="0 0 0.75 0.75" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.419.375.616.178A.031.031 0 1 0 .572.134L.375.331.178.134a.031.031 0 0 0-.044.044l.197.197-.197.197a.03.03 0 0 0 0 .044.03.03 0 0 0 .044 0L.375.419l.197.197a.03.03 0 0 0 .044 0 .03.03 0 0 0 0-.044Z" style="fill:#fff"/></svg>
+                    </div>
+                    <div class="item_img">
+                        <img src="https://images.bewakoof.com/t640/women-s-granite-green-bambi-sketch-graphic-printed-oversized-t-shirt-647243-1733230733-1.jpg" alt="">
+                    </div>
+                    <div class="item_details">
+                        <p>Iphone 14 Pro Max</p>
+                        <strong>$1899</strong>
+                        <div class="quan">
+                            <span class="quan_btns">-</span>
+                            <strong>1</strong>
+                            <span class="quan_btns">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout_btn_box">
+                <div class="total">
+                    <strong>Sub-Total</strong>
+                    <span>Rs.1999.00</span>
+                </div>
+                <button class="view_cart_btn">View Cart</button>
+                <button class="check_out_btn">Check Out</button>
             </div>
         </div>
        </div>
@@ -128,19 +158,6 @@
                 <a href="#" class="sel_link">Home & Kichen</a>
                 <a href="#" class="sel_link">Fashion</a>
             </div>
-            <!-- for mobile devices -->
-            <!-- <select onchange="window.location.href=this.value;">
-                <option value="#" selected>All</option>
-                <option value="#">Sell</option>
-                <option value="#">Mobile</option>
-                <option value="#">Clothes</option>
-                <option value="#">Men's</option>
-                <option value="#">Women's</option>
-                <option value="#">Today's Deals</option>
-                <option value="#">Electronic</option>
-                <option value="#">Home & Kitchen</option>
-                <option value="#">Fashion</option>
-            </select> -->
             <select class="select_options">
                 <option>All</option>
                 <option>Sell</option>
@@ -167,6 +184,7 @@
                         </svg>
                     </span>
                 </label>
+
 
              <!-- slider filter -->
 
@@ -220,6 +238,46 @@
                 <!-- dots are created by javascript  -->
             </div>
         </div>
+
+        <!-- timer with bg video -->
+        <div class="countdown_timer">
+            <div class="timer_inner">
+                <p>Add New Feature every 24/7</p>
+                <span class="des">We are working hard to make an awesome website with lot of intutive features. Subscribe below to get notified when we launch and get some huge discounts as a beta tester.</span>
+                <div class="main-timer">
+                    <div class="hours_box time_box">
+                        <input type="text" value="00" readonly>
+                        <span>Hour</span>
+                    </div>
+                    <div class="Mintues_box time_box">
+                        <input type="text" value="00" readonly>
+                        <span>Mintue</span>
+                    </div>
+                    <div class="seconds_box time_box">
+                        <input type="text" value="00" readonly>
+                        <span>Second</span>
+                    </div>
+                </div>
+                <div class="notify_box">
+                    <form id="emailForm">
+                        <input type="email" id="emailInput" placeholder="Enter Your Email">
+                        <button onclick="closePopup()">Notify Me</button>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+
+        <!-- Popup Modal -->
+        <div id="popup" class="popup">
+            <p id="popupMessage">ajjfhiuefodjo</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+
+
+
+
+        
         <!-- collection product section started -->
         <div class="collection_box">
             <h1>Our Popular Products</h1>
@@ -230,9 +288,12 @@
                 <div class="more_btn">Load More</div>
             </div>
         </div>
-    </div>
+
+
     <script src="script.js"></script>
+    <script src="multiimageslider.js"></script>
     <script src="collection.js"></script>
+    <script src="timer.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>

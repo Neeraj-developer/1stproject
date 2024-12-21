@@ -132,7 +132,7 @@ overlay_div.addEventListener("click", () => {
     slider_cart.classList.remove('to_left');
     overlay_div.classList.remove('remove_overlay');
 
-})
+});
 // image slider
 const leftBtn = document.getElementById('left_slide');
 const rightBtn = document.getElementById('right_slide');
@@ -212,7 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let cros_fil_slide = document.getElementById("cros_fil_slide");
     let slide_filter_btn = document.getElementById("main_filter_btn");
 
-    // this is for filter input checked
 
     if (window.innerWidth < 874) {
         function forMobile(){
@@ -260,3 +259,70 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 });
+
+
+
+// collection slider
+// JavaScript Slider Functionality
+// const sliderTrack = document.getElementById('slider-track');
+// const prevBtn = document.getElementById('prevBtn');
+// const nextBtn = document.getElementById('nextBtn');
+// const sliderItems = document.querySelectorAll('.slider-item');
+
+// let itemWidth = 130 + 12; // Include gap (12px)
+// const totalItems = sliderItems.length;
+// let currentIndex = 0;
+// let translationCount = 0; // Counter for total translations
+// let MAX_TRANSLATIONS = 2; // Default value (for screen width > 768px)
+
+// // Function to update the slider position
+// function updateSliderPosition() {
+//   sliderTrack.style.transition = 'transform 0.5s ease'; // Add transition for smooth effect
+//   sliderTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+// }
+
+// // Handle next button click
+// nextBtn.addEventListener('click', () => {
+//   if (translationCount < MAX_TRANSLATIONS) {
+//     if (currentIndex < totalItems - 1) {
+//       currentIndex++;
+//     } else {
+//       currentIndex = 0; // Loop back to the first item
+//     }
+//     translationCount++;
+//     updateSliderPosition();
+//   } else {
+//     console.log("Maximum translations reached.");
+//   }
+// });
+
+// // Handle previous button click
+// prevBtn.addEventListener('click', () => {
+//   if (translationCount > 0) {
+//     if (currentIndex > 0) {
+//       currentIndex--;
+//     } else {
+//       currentIndex = totalItems - 1; // Loop back to the last item
+//     }
+//     translationCount--;
+//     updateSliderPosition();
+//   } else {
+//     console.log("Maximum translations reached.");
+//   }
+// });
+
+// // Adjust item width dynamically on window resize
+// window.addEventListener('resize', () => {
+//   itemWidth = sliderItems[0].offsetWidth + 12; // Recalculate the width including the gap
+//   // Adjust MAX_TRANSLATIONS based on window width
+//   if (window.innerWidth > 768) {
+//     MAX_TRANSLATIONS = 2;
+//   } else {
+//     MAX_TRANSLATIONS = 7;
+//   }
+//   updateSliderPosition();
+// });
+
+// // Initial slider position
+// updateSliderPosition();
+

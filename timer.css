@@ -1,0 +1,149 @@
+.countdown_timer{
+    height: auto;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+.timer_inner{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.timer_inner p{
+    font-size: 40px;
+    color: #2C3E50;
+    font-weight: bold;
+}
+.timer_inner .des{
+    font-size: 17px;
+    color: #2C3E50;
+    text-align: center;
+    font-weight: 500;
+}
+.main-timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: auto;
+}
+.main-timer .time_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.main-timer .time_box input{
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    font-size: 46px;
+    background: transparent;
+    border: none;
+    color: #2C3E50;
+}
+.time_box span{
+    font-size: 17px;
+    font-weight: 500;
+}
+.timer_inner .notify_box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.timer_inner .notify_box form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.timer_inner .notify_box form input{
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 10px;
+    width: 364px;
+    border: 1px solid  #2C3E50;
+    background-color: transparent;
+    border-right: none;
+    outline: none;
+}
+.timer_inner .notify_box form button{
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 10px;
+    border: 1px solid #2C3E50;
+    background-color: #2C3E50;
+    color: #fff;
+    cursor: pointer;
+}
+/* hover effect */
+
+.timer_inner .notify_box form button:hover{
+    background-color: #34495E;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    transition: all .5s ease;
+}
+
+.popup button {
+    margin-top: 10px;
+}
+
+.popup p {
+    margin: 0;
+}
+.countdown_timer.hidden {
+    display: none;
+}
+
+
+@media screen and (max-width:768px) {
+    .timer_inner{
+        width: 100%;
+    }
+    .timer_inner p{
+        text-align: center;
+    }
+    .main-timer .time_box input{
+        height: 60px;
+        width: 60px;
+    }
+    .countdown_timer{
+        padding: 50px 10px;
+    }
+    .timer_inner .notify_box form input{
+        width: 100%;
+    }
+    .timer_inner .notify_box form{
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}
+
