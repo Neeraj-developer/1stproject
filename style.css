@@ -5,6 +5,7 @@
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    text-decoration: none;
 }
 .container-fluid{
     background-color: #ECF0F1;
@@ -117,7 +118,7 @@ input::placeholder{
     align-items: center;
     gap: 15px;
 }
-.container-fluid a{
+.main_links li a{
     text-decoration: none;
     color: #fff;
     font-size: 17px;
@@ -183,6 +184,9 @@ input::placeholder{
     cursor: pointer;
 }
 
+.slide #ul_block li a{
+    color: #023047;
+}
 @media screen and (max-width: 768px) {
     .container-fluid nav{
         padding: 20px 20px;
