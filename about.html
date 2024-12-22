@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About.html</title>
     <link rel="stylesheet" href="loading.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="active.css">
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="filter.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="timer.css">
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="multiimagesslider.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,16 +23,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="loader" class="loader">
-        <p><dotlottie-player src="https://lottie.host/bd981e4b-8227-4e67-9e13-5b90bac9e128/6xtpHsy26M.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay>
-        </dotlottie-player></p>
-    </div>
-    <div class="container-fluid content" id="content">
+    <div class="container-fluid content" id="content" style="display: block;">
         <nav>
         <!-- nav links -->
         <div class="nav_links">
             <ul class="ul main_links">
-                <li>Home</li>
+                <li><a href="index.html">Home</a></li>
                 <li class="li"><a href="product.html">Product</a> <i class="fa-solid fa-angle-down icon_m"></i>
                     <ul class="ul hover_link">
                         <li>Shampoo</li>
@@ -127,117 +124,50 @@
         </div>
        </div>
        <!-- end navbar -->
-
-       <!-- imageslider started -->
-       <div class="image_slider_box">
-            <!-- <svg id="left_slide" width="25" height="25" viewBox="0 0 0.469 0.469" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.313.438.094.235.313.031" stroke="#000" stroke-linecap="square" stroke-width=".031"/></svg> -->
-            <i class="fa-solid fa-angle-left" id="left_slide"></i>
-            <i class="fa-solid fa-angle-right" id="right_slide"></i>
-            <!-- <svg id="right_slide" width="25" height="25" viewBox="0 0 0.469 0.469" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,0,0)"><path d="M.313.438.094.235.313.031" stroke="#000" stroke-linecap="square" stroke-width=".031"></path></svg> -->
-            <div class="frame">
-                <div class="slider_inner" id="slider_inner">
-                    <img src="Brown Modern New Brand Fashion Banner (1).jpg" class="slider_images" alt="Banner 1">
-                    <img src="changebanner.jpg" class="slider_images" alt="Banner 2">
-                    <img src="changebanner2.jpg" class="slider_images" alt="Banner 2">
-                </div>
-            </div>
-            <div class="image_dot_box" id="image_dot_box">
-                <!-- dots are created by javascript  -->
+        <div class="about">
+            <div class="about_content">
+                <img src="underwork.jpg" alt="under working stage">
             </div>
         </div>
+    </div>
 
-        <!-- timer with bg video -->
-        <!-- Countdown Timer Section -->
-        <div class="countdown_timer">
-            <div class="timer_inner">
-                <p>Add New Feature every 24/7</p>
-                <span class="des">We are working hard to make an awesome website with lots of intuitive features. Subscribe below to get notified when we launch and get some huge discounts as a beta tester.</span>
-                <div class="main-timer">
-                    <div class="hours_box time_box">
-                        <input type="text" value="00" readonly>
-                        <span>Hour</span>
-                    </div>
-                    <div class="Mintues_box time_box">
-                        <input type="text" value="00" readonly>
-                        <span>Minute</span>
-                    </div>
-                    <div class="seconds_box time_box">
-                        <input type="text" value="00" readonly>
-                        <span>Second</span>
-                    </div>
-                </div>
-                <div class="notify_box">
-                    <form id="emailForm">
-                        <input type="email" id="emailInput" placeholder="Enter Your Email">
-                        <button type="submit">Notify Me</button>
-                    </form>
-                </div>
+    <!-- footer section -->
+    <div class="footer_section">
+        <div class="footer_content">
+            <div class="box1">
+                <p>Quick Link :</p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="contact.html">Contect Us</a></li>
+                </ul>
             </div>
+            <div class="box1">
+                <p>Contact Us :</p>
+                <ul>
+                    <li><i class="fa-solid fa-envelope"></i> Email : DeveloperNeeraj@gmail.com</li>
+                    <li><i class="fa-solid fa-phone"></i> Phone : 7988303104</li>
+                    <li><i class="fa-solid fa-map-location-dot"></i> Address : #52, Ranjit Nagar, Ambala City, Haryna</li>
+                </ul>
+            </div>
+            <div class="box1 social_icon">
+                <p>Follow Us :</p>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                </ul>
+            </div>
+            <!-- <div class="box1"></div> -->
         </div>
-
-        <!-- Popup Modal -->
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <img id="popupImage" src="" alt="Image" />
-                <p id="popupMessage"></p>
-                <button onclick="closePopup()">OK</button>
-            </div>
+        <div class="copright_box">
+            <span>Created By Neeraj kumar <i class="fa-regular fa-copyright"></i> 2024 | All right Reserved.</span>
         </div>
-
-        <!-- collection product section started -->
-        <div class="collection_box">
-            <h1>Our Popular Products</h1>
-            <div class="inner_box container" id="productContainer">
-                <!-- proudct are display array method in js -->
-            </div>
-            <div class="load_more">
-                <div class="more_btn"><a href="product.html">Load More</a></div>
-            </div>
-        </div>
-
-
-        <!-- footer section -->
-         <div class="footer_section">
-            <div class="footer_content">
-                <div class="box1">
-                    <p>Quick Link :</p>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="product.html">Products</a></li>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="services">Services</a></li>
-                        <li><a href="contact.html">Contect Us</a></li>
-                    </ul>
-                </div>
-                <div class="box1">
-                    <p>Contact Us :</p>
-                    <ul>
-                        <li><i class="fa-solid fa-envelope"></i> Email : DeveloperNeeraj@gmail.com</li>
-                        <li><i class="fa-solid fa-phone"></i> Phone : 7988303104</li>
-                        <li><i class="fa-solid fa-map-location-dot"></i> Address : #52, Ranjit Nagar, Ambala City, Haryna</li>
-                    </ul>
-                </div>
-                <div class="box1 social_icon">
-                    <p>Follow Us :</p>
-                    <ul>
-                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    </ul>
-                </div>
-                <!-- <div class="box1"></div> -->
-            </div>
-            <div class="copright_box">
-                <span>Created By Neeraj kumar <i class="fa-regular fa-copyright"></i> 2024 | All right Reserved.</span>
-            </div>
-         </div>
-
+     </div>
 
     <script src="script.js"></script>
-    <script src="multiimageslider.js"></script>
-    <script src="collection.js"></script>
-    <script src="timer.js"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>
