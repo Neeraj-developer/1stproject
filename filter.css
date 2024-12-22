@@ -35,7 +35,9 @@ select {
 select option{
     color: #2C3E50;
 }
-
+.main_filter_btn span{
+    font-size: 15px;
+}
 /* Style to hide the arrow completely */
 select::-ms-expand {
     display: none; /* For Internet Explorer */
@@ -43,7 +45,7 @@ select::-ms-expand {
 
 .link_inner .sel_link{
     color: #fff;
-    font-size: 17px;
+    font-size: 15px;
     cursor: pointer;
 }
 .sel_link_box .select_options{
@@ -101,7 +103,7 @@ select::-ms-expand {
     right: 0;
     transition: transform .3s ease;
     transform: translateX(100%);
-    top: 123px;
+    top: 110px;
     max-height: 80vh;
     height: 80vh;
     padding: 10px 20px;
@@ -125,7 +127,7 @@ select::-ms-expand {
     list-style-type: none;
 }
 .filter_sort_by ul li{
-    font-size: 16px;
+    font-size: 15px;
     margin-top: 6px;
     display: flex;
     gap: 3px;
