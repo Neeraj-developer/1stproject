@@ -36,6 +36,7 @@
     }
     .collection_box .inner_box{
         justify-content: center !important;
+        margin-top: 30px !important;
     }
 }
 @media screen and (max-width:963px) {
@@ -78,7 +79,7 @@
 }
 @media screen and (max-width: 1079px) {
     .collection_box{
-        padding: 50px 15px !important;
+        padding: 20px 15px !important;
     }
 }
 @media screen and (min-width: 1900px) {

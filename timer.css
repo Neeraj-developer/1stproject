@@ -7,6 +7,8 @@
     align-items: center;
     justify-content: center;
     padding: 50px;
+    border-bottom: 1px solid #2C3E50;
+    border-top: 1px solid #2C3E50;
 }
 
 .timer_inner {
@@ -175,7 +177,7 @@
     }
 
     .countdown_timer {
-        padding: 50px 20px;
+        padding: 20px 20px;
     }
 
     .timer_inner .notify_box form input {
