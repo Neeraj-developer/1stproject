@@ -22,10 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="loader" class="loader">
-        <p><dotlottie-player src="https://lottie.host/bd981e4b-8227-4e67-9e13-5b90bac9e128/6xtpHsy26M.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay>
-        </dotlottie-player></p>
-    </div>
     <div class="container-fluid content" id="content">
         <nav>
         <!-- nav links -->
@@ -52,7 +48,8 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             
-        </div> 
+        </div>
+
         <!-- responsive  -->
          <button class="bars_btn" id="bar"><svg width="22" height="22" viewBox="0 0 0.9 0.9" xmlns="http://www.w3.org/2000/svg"><path class="clr-i-outline clr-i-outline-path-1" d="M.8.725H.1a.025.025 0 0 1 0-.05h.7a.025.025 0 0 1 0 .05"/><path class="clr-i-outline clr-i-outline-path-2" d="M.8.475H.1a.025.025 0 0 1 0-.05h.7a.025.025 0 0 1 0 .05"/><path class="clr-i-outline clr-i-outline-path-3" d="M.8.225H.1a.025.025 0 0 1 0-.05h.7a.025.025 0 0 1 0 .05"/><path d="M0 0h.9v.9H0z" fill="none"/></svg></i></button>
          <div class="slide" id="slide">
@@ -88,11 +85,15 @@
             <svg id="searchclose" width="25" height="25" viewBox="0 0 0.75 0.75" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.419.375.616.178A.031.031 0 1 0 .572.134L.375.331.178.134a.031.031 0 0 0-.044.044l.197.197-.197.197a.03.03 0 0 0 0 .044.03.03 0 0 0 .044 0L.375.419l.197.197a.03.03 0 0 0 .044 0 .03.03 0 0 0 0-.044Z" style="fill:#fff"/></svg>
         </div>
 
+        
         <!-- cart icon -->
          <div class="cart_box">
-            <a href="#" class="profile_icon">
-                <svg fill="#fff" width="24px" height="24px" viewBox="0 0 1.26 1.26" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>user-line</title><path d="M0.63 0.595a0.245 0.245 0 1 0 -0.245 -0.245 0.245 0.245 0 0 0 0.245 0.245m0 -0.42a0.175 0.175 0 1 1 -0.175 0.175 0.175 0.175 0 0 1 0.175 -0.175" class="clr-i-outline clr-i-outline-path-1"/><path d="M1.066 0.853a0.601 0.601 0 0 0 -0.873 0A0.07 0.07 0 0 0 0.175 0.901V1.085a0.07 0.07 0 0 0 0.07 0.07h0.77a0.07 0.07 0 0 0 0.07 -0.07v-0.184a0.07 0.07 0 0 0 -0.019 -0.048M1.015 1.085H0.245v-0.184a0.531 0.531 0 0 1 0.77 0Z" class="clr-i-outline clr-i-outline-path-2"/><path x="0" y="0" width="36" height="36" fill-opacity="0" d="M0 0H1.26V1.26H0V0z"/></svg>
-            </a>
+            <svg class="profile_icon" fill="#fff" width="24px" height="24px" viewBox="0 0 1.26 1.26" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>user-line</title>
+                <path d="M0.63 0.595a0.245 0.245 0 1 0 -0.245 -0.245 0.245 0.245 0 0 0 0.245 0.245m0 -0.42a0.175 0.175 0 1 1 -0.175 0.175 0.175 0.175 0 0 1 0.175 -0.175" class="clr-i-outline clr-i-outline-path-1"/>
+                <path d="M1.066 0.853a0.601 0.601 0 0 0 -0.873 0A0.07 0.07 0 0 0 0.175 0.901V1.085a0.07 0.07 0 0 0 0.07 0.07h0.77a0.07 0.07 0 0 0 0.07 -0.07v-0.184a0.07 0.07 0 0 0 -0.019 -0.048M1.015 1.085H0.245v-0.184a0.531 0.531 0 0 1 0.77 0Z" class="clr-i-outline clr-i-outline-path-2"/>
+                <path x="0" y="0" width="36" height="36" fill-opacity="0" d="M0 0H1.26V1.26H0V0z"/>
+            </svg>
             <button class="cart_btn" id="cart_btn">
                 <svg width="25px" height="25px" viewBox="0 0 1 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="icomoon-ignore"/><path d="M0.957 0.3H0.257L0.2 0.067H0.043v0.033h0.131l0.162 0.67a0.083 0.083 0 0 0 -0.06 0.08 0.083 0.083 0 1 0 0.167 0c0 -0.019 -0.006 -0.036 -0.017 -0.05h0.234a0.083 0.083 0 0 0 -0.017 0.05 0.083 0.083 0 1 0 0.083 -0.083H0.37l-0.016 -0.067h0.468L0.957 0.3zM0.41 0.85c0 0.028 -0.022 0.05 -0.05 0.05s-0.05 -0.022 -0.05 -0.05 0.022 -0.05 0.05 -0.05 0.05 0.022 0.05 0.05m0.367 0a0.05 0.05 0 0 1 -0.1 0 0.05 0.05 0 0 1 0.1 0m-0.431 -0.183L0.265 0.333h0.646L0.797 0.667z" fill="#fff"/></svg>
                 <sup class="cart_item_count" id="cart_item_count">0</sup>
@@ -128,6 +129,56 @@
        </div>
        <!-- end navbar -->
 
+    <!-- l-oginpopup -->
+    <div class="loginpopup" >
+        <div class="main_popup">
+            <div>
+                <button class="back_btn" id="return_btn">
+                    <svg width="25" fill="#fff" height="25" viewBox="-2.453 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m8.031 2 1.063 1.063L4 8.188l5.094 5.125-1.063 1.063-6.125-6.188z"/></svg>
+                </button>
+            </div>
+            <h1>Hello!</h1>
+            <div class="form_div">
+                <form action="">
+                    <div class="email_box">
+                        <label for="email">Email:</label>
+                        <input type="email" autocomplete="off"  placeholder="xyz@gmail.com" id="email">
+                    </div>
+                    
+                    <div class="pass_box">
+                        <label for="password">Password:</label>
+                        <input type="password" autocomplete="off"  placeholder="*******" id="password">
+                    </div>
+
+                    <a href="#">Forget Password?</a>
+
+                    <button type="reset">Sign in</button>
+                    
+                    <span>or</span>
+                </form>
+
+                <button>
+                    <svg width="25" height="25" viewBox="0 0 0.5 0.5" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#4285F4" d="M.466.255A.2.2 0 0 0 .462.211H.255v.084h.119A.1.1 0 0 1 .33.361v.055h.071A.21.21 0 0 0 .467.255"/><path fill="#34A853" d="M.254.469A.2.2 0 0 0 .4.416L.329.361a.14.14 0 0 1-.075.021.13.13 0 0 1-.123-.09H.058v.056a.22.22 0 0 0 .196.121"/><path fill="#FBBC04" d="M.131.292a.13.13 0 0 1 0-.084V.152H.058a.22.22 0 0 0 0 .196z"/><path fill="#EA4335" d="M.254.118a.12.12 0 0 1 .084.033L.401.089A.2.2 0 0 0 .254.032a.22.22 0 0 0-.197.121l.074.055a.13.13 0 0 1 .123-.09"/></svg>
+                </button>
+
+                <div class="read_info_box">
+                    <div class="check_box" id="check_box">
+                        <svg width="25" height="25" viewBox="0 0 0.66 0.66" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.275.495A.03.03 0 0 1 .256.488L.119.35A.027.027 0 0 1 .158.312L.276.43.504.202a.027.027 0 1 1 .039.039L.295.488a.03.03 0 0 1-.019.008" style="fill:#023047"/></svg>
+                    </div>
+                    <span id="label_check">I agree to the <b>Terms & Conditions</b> and <b>Privacy Policy</b></span>
+                </div>
+
+                <div class="new_acount_box">
+                    <p>Create a new account? <span>click here</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
        <!-- imageslider started -->
        <div class="image_slider_box">
             <!-- <svg id="left_slide" width="25" height="25" viewBox="0 0 0.469 0.469" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.313.438.094.235.313.031" stroke="#000" stroke-linecap="square" stroke-width=".031"/></svg> -->
@@ -147,7 +198,6 @@
         </div>
 
         <!-- timer with bg video -->
-        <!-- Countdown Timer Section -->
         <div class="countdown_timer">
             <div class="timer_inner">
                 <p>Add New Feature every 24/7</p>
@@ -168,12 +218,13 @@
                 </div>
                 <div class="notify_box">
                     <form id="emailForm">
-                        <input type="email" id="emailInput" placeholder="Enter Your Email">
+                        <input type="email" id="emailInput" placeholder="Enter Your Email" required>
                         <button type="submit">Notify Me</button>
                     </form>
                 </div>
             </div>
         </div>
+    
 
         <!-- Popup Modal -->
         <div id="popup" class="popup">
@@ -238,6 +289,5 @@
     <script src="multiimageslider.js"></script>
     <script src="collection.js"></script>
     <script src="timer.js"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>

@@ -1,14 +1,45 @@
-// Wait for the window to fully load
-window.addEventListener('load', () => {
-    // Display the loader for 5 seconds
-    setTimeout(() => {
-        // Hide the loader
-        document.getElementById('loader').style.display = 'none';
+// privacy checked
 
-        // Show the main content
-        document.getElementById('content').style.display = 'block';
-    }, 2000); // 5 seconds delay
+let labelCheck = document.getElementById("label_check");
+let checkBox = document.getElementById("check_box");
+
+labelCheck.addEventListener('click', () => {
+    if (checkBox.classList.contains('checked')) {
+        checkBox.classList.remove('checked');   
+    } else{
+        checkBox.classList.add('checked');   
+    }
 });
+
+checkBox.addEventListener('click', () => {
+    if (checkBox.classList.contains('checked')) {
+        checkBox.classList.remove('checked');   
+    } else{
+        checkBox.classList.add('checked');   
+    }
+})
+
+// back btn
+
+let backBtn = document.getElementById('return_btn');
+let popupSlide = document.querySelector('.loginpopup');
+let profileIcon = document.querySelector('.profile_icon');
+
+backBtn.addEventListener('click', () => {
+    if (popupSlide.classList.contains('show')) {
+        popupSlide.classList.remove('show');
+        console.log("Class 'show' removed from back button");
+    } else {
+        popupSlide.classList.add('show');
+        console.log("Class 'show' added to back button");
+    }
+});
+
+profileIcon.addEventListener('click', () => {
+    popupSlide.classList.add('show');
+});
+
+
 const hoverItems = document.querySelectorAll('.li');
 // Loop through each parent <li>
 hoverItems.forEach((item) => {
@@ -262,70 +293,4 @@ const startSlideShow = () => {
 }
 startSlideShow();
 // this is for filtercontainer
-
-
-
-// collection slider
-// JavaScript Slider Functionality
-// const sliderTrack = document.getElementById('slider-track');
-// const prevBtn = document.getElementById('prevBtn');
-// const nextBtn = document.getElementById('nextBtn');
-// const sliderItems = document.querySelectorAll('.slider-item');
-
-// let itemWidth = 130 + 12; // Include gap (12px)
-// const totalItems = sliderItems.length;
-// let currentIndex = 0;
-// let translationCount = 0; // Counter for total translations
-// let MAX_TRANSLATIONS = 2; // Default value (for screen width > 768px)
-
-// // Function to update the slider position
-// function updateSliderPosition() {
-//   sliderTrack.style.transition = 'transform 0.5s ease'; // Add transition for smooth effect
-//   sliderTrack.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-// }
-
-// // Handle next button click
-// nextBtn.addEventListener('click', () => {
-//   if (translationCount < MAX_TRANSLATIONS) {
-//     if (currentIndex < totalItems - 1) {
-//       currentIndex++;
-//     } else {
-//       currentIndex = 0; // Loop back to the first item
-//     }
-//     translationCount++;
-//     updateSliderPosition();
-//   } else {
-//     console.log("Maximum translations reached.");
-//   }
-// });
-
-// // Handle previous button click
-// prevBtn.addEventListener('click', () => {
-//   if (translationCount > 0) {
-//     if (currentIndex > 0) {
-//       currentIndex--;
-//     } else {
-//       currentIndex = totalItems - 1; // Loop back to the last item
-//     }
-//     translationCount--;
-//     updateSliderPosition();
-//   } else {
-//     console.log("Maximum translations reached.");
-//   }
-// });
-
-// // Adjust item width dynamically on window resize
-// window.addEventListener('resize', () => {
-//   itemWidth = sliderItems[0].offsetWidth + 12; // Recalculate the width including the gap
-//   // Adjust MAX_TRANSLATIONS based on window width
-//   if (window.innerWidth > 768) {
-//     MAX_TRANSLATIONS = 2;
-//   } else {
-//     MAX_TRANSLATIONS = 7;
-//   }
-//   updateSliderPosition();
-// });
-
-// // Initial slider position
-// updateSliderPosition();
 
