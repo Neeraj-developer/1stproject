@@ -39,6 +39,24 @@ profileIcon.addEventListener('click', () => {
     popupSlide.classList.add('show');
 });
 
+// main popup
+
+let slideStartBtn = document.querySelector('.slide_next_box button');
+let slideClose = document.querySelector('.loading_popup');
+let slideText = document.querySelector('.slide_next_box span');
+
+slideStartBtn.addEventListener('click', () => {
+    slideStartBtn.classList.add('transform');
+    slideText.style.opacity="0";
+
+    setTimeout(() => {
+        slideClose.classList.add('none'); // Replace 'visible' with the class you want to add
+    }, 500);
+});
+
+
+
+
 
 const hoverItems = document.querySelectorAll('.li');
 // Loop through each parent <li>
