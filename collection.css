@@ -123,6 +123,6 @@
         font-size: 11px !important;
     }
     .collection_box .inner_box{
-        justify-content: left !important;
+        align-items: left !important;
     }
 }
