@@ -114,3 +114,12 @@
 .load_more .more_btn:hover{
     background-color: #34495E;
 }
+@media screen and (max-width:768px) {
+    .coll_box .img_box{
+        height: 150px !important;
+        width: 150px !important;
+    }
+    .pro_info .box1 span{
+        font-size: 11px !important;
+    }
+}
