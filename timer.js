@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popupMessage');
     const popupImage = document.getElementById('popupImage');
-    
+
     // Check if email exists in localStorage
     const storedEmail = localStorage.getItem('userEmail');
 
@@ -117,3 +117,61 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update the clock every second
     setInterval(clock, 1000);
 });
+
+
+// back btn
+
+let backBtn = document.getElementById('return_btn');
+let popupSlide = document.querySelector('.loginpopup');
+let profileIcon = document.querySelector('.profile_icon');
+
+backBtn.addEventListener('click', () => {
+    if (popupSlide.classList.contains('show')) {
+        popupSlide.classList.remove('show');
+        console.log("Class 'show' removed from back button");
+    } else {
+        popupSlide.classList.add('show');
+        console.log("Class 'show' added to back button");
+    }
+});
+
+profileIcon.addEventListener('click', () => {
+    popupSlide.classList.add('show');
+});
+
+// main popup
+
+let slideStartBtn = document.querySelector('.slide_next_box button');
+let slideClose = document.querySelector('.loading_popup');
+let slideText = document.querySelector('.slide_next_box span');
+const countdownTimerPopup = document.querySelector('.countdown_timer');
+const timerOverlay = document.querySelector('.timer_overlay');
+const closeTimePopup = document.querySelector('#close_time_popup');
+const bodyOver = document.querySelector('body');
+
+
+slideStartBtn.addEventListener('click', () => {
+    // Add 'transform' class to the button
+    slideStartBtn.classList.add('transform');
+
+    // Hide the text by changing its opacity
+    slideText.style.opacity = "0";
+
+    // Add 'none' class to slideClose after 500ms
+    setTimeout(() => {
+        slideClose.classList.add('none'); // Replace 'none' with the desired class
+    }, 500);
+
+    // Show the popup after 3 seconds
+    setTimeout(() => {
+        countdownTimerPopup.classList.add('show_popup');
+        timerOverlay.classList.add('open');
+        bodyOver.style.overflow="hidden"
+    }, 3000); // 3000ms = 3 seconds
+});
+
+closeTimePopup.addEventListener('click', () => {
+    countdownTimerPopup.classList.remove('show_popup');
+    timerOverlay.classList.remove('open');
+    bodyOver.style.overflow="auto"
+})

@@ -49,7 +49,6 @@
             </ul>
             
         </div>
-
         <!-- responsive  -->
          <button class="bars_btn" id="bar"><svg width="22" height="22" viewBox="0 0 0.9 0.9" xmlns="http://www.w3.org/2000/svg"><path class="clr-i-outline clr-i-outline-path-1" d="M.8.725H.1a.025.025 0 0 1 0-.05h.7a.025.025 0 0 1 0 .05"/><path class="clr-i-outline clr-i-outline-path-2" d="M.8.475H.1a.025.025 0 0 1 0-.05h.7a.025.025 0 0 1 0 .05"/><path class="clr-i-outline clr-i-outline-path-3" d="M.8.225H.1a.025.025 0 0 1 0-.05h.7a.025.025 0 0 1 0 .05"/><path d="M0 0h.9v.9H0z" fill="none"/></svg></i></button>
          <div class="slide" id="slide">
@@ -180,10 +179,9 @@
 
         <div class="loading_popup">
             <div class="loading_inner">
-                <h1>Welcome to, <br> Our Website</h1>
-
+                <!-- <h1>Welcome to, <br> </h1> -->
                 <div class="loading_ban_img">
-                    <img src="https://cdn.shopify.com/s/files/1/0612/0328/4070/files/3786128-removebg-preview_1_2x_3532ac74-16e7-4b1a-b411-e36c558e6664.png?v=1734952191" alt="banner_image">
+                    <dotlottie-player src="https://lottie.host/0aecae5b-a2fa-4151-bd1a-0aff441ccec6/2FCpPvIWTt.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
                 </div>
                 <div class="loading_content">
                     <div class="slide_next_box">
@@ -195,7 +193,6 @@
                 </div>
             </div>
         </div>
-
 
        <!-- imageslider started -->
        <div class="image_slider_box">
@@ -215,9 +212,24 @@
             </div>
         </div>
 
-        <!-- timer with bg video -->
-        <div class="countdown_timer">
-            <div class="timer_inner">
+        <!-- collection product section started -->
+        <div class="collection_box">
+            <h1>Our Popular Products</h1>
+            <div class="inner_box container" id="productContainer">
+                <!-- proudct are display array method in js -->
+            </div>
+            <div class="load_more">
+                <div class="more_btn"><a href="product.html">Load More</a></div>
+            </div>
+        </div>
+
+         <!-- timer with bg video -->
+          <div class="timer_overlay"></div>
+         <div class="countdown_timer">
+             <div class="timer_inner">
+                <button id="close_time_popup">
+                    <svg width="25" height="25" viewBox="0 0 0.75 0.75" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.419.375.616.178A.031.031 0 1 0 .572.134L.375.331.178.134a.031.031 0 0 0-.044.044l.197.197-.197.197a.03.03 0 0 0 0 .044.03.03 0 0 0 .044 0L.375.419l.197.197a.03.03 0 0 0 .044 0 .03.03 0 0 0 0-.044Z" style="fill:#fff"/></svg>
+                </button>
                 <p>Add New Feature every 24/7</p>
                 <span class="des">We are working hard to make an awesome website with lots of intuitive features. Subscribe below to get notified when we launch and get some huge discounts as a beta tester.</span>
                 <div class="main-timer">
@@ -242,7 +254,6 @@
                 </div>
             </div>
         </div>
-    
 
         <!-- Popup Modal -->
         <div id="popup" class="popup">
@@ -250,17 +261,6 @@
                 <img id="popupImage" src="" alt="Image" />
                 <p id="popupMessage"></p>
                 <button onclick="closePopup()">OK</button>
-            </div>
-        </div>
-
-        <!-- collection product section started -->
-        <div class="collection_box">
-            <h1>Our Popular Products</h1>
-            <div class="inner_box container" id="productContainer">
-                <!-- proudct are display array method in js -->
-            </div>
-            <div class="load_more">
-                <div class="more_btn"><a href="product.html">Load More</a></div>
             </div>
         </div>
 
@@ -307,5 +307,6 @@
     <script src="multiimageslider.js"></script>
     <script src="collection.js"></script>
     <script src="timer.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>

@@ -44,7 +44,7 @@ products.forEach((product, index) => {
         <div class="img_box">
             <img src="${product.image}" alt="${product.name}">
             <button class="cart_animate cart_click">
-                <svg width="28px" height="28px" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
+                <svg class="cart_icon_pro" width="21px" height="21px" viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.957 0.3H0.257L0.2 0.067H0.043v0.033h0.131l0.162 0.67a0.083 0.083 0 0 0 -0.06 0.08 0.083 0.083 0 1 0 0.167 0c0 -0.019 -0.006 -0.036 -0.017 -0.05h0.234a0.083 0.083 0 0 0 -0.017 0.05 0.083 0 1 0 0.083 -0.083H0.37l-0.016 -0.067h0.468L0.957 0.3zM0.41 0.85c0 0.028 -0.022 0.05 -0.05 0.05s-0.05 -0.022 -0.05 -0.05 0.022 -0.05 0.05 -0.05 0.05 0.022 0.05 0.05m0.367 0a0.05 0.05 0 0 1 -0.1 0 0.05 0.05 0 0 1 0.1 0m-0.431 -0.183L0.265 0.333h0.646L0.797 0.667z" fill="#000"></path>
                 </svg>
             </button>

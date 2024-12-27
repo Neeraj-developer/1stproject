@@ -130,6 +130,7 @@ input::placeholder{
     color: #fff;
     cursor: pointer;
     position: relative;
+    display: flex;
 }
 .cart_btn sup{
     position: absolute;
@@ -524,6 +525,9 @@ input::placeholder{
         height: 40px;
         transition: all .5s ease;
         width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .slide_next_box button.transform{
         transform: translateX(152px);
@@ -613,6 +617,9 @@ input::placeholder{
     .back_btn{
         position: sticky;
         top: 20px;
+    }
+    .loading_ban_img{
+        height: 300px;
     }
 }
 @media screen and (max-width:380px) {

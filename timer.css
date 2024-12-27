@@ -3,12 +3,46 @@
     height: auto;
     width: 100%;
     background-color: transparent;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 50px;
     border-bottom: 1px solid #2C3E50;
     border-top: 1px solid #2C3E50;
+    transition: display 1s ease;
+}
+.countdown_timer.show_popup{
+    display: flex;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: #fff;
+    z-index: 9999999;
+    transform: translate(0%, 30%);
+    width: 100%;
+}
+#close_time_popup{
+    background-color: #2C3E50;
+    border: none;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+}
+.timer_overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #2a2121ab;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 999999;
+}
+.timer_overlay.open{
+    display: block;
 }
 
 .timer_inner {
@@ -187,5 +221,17 @@
     .timer_inner .notify_box form {
         justify-content: flex-end;
         gap: 10px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .countdown_timer.show_popup{
+        display: flex;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        background-color: #fff;
+        z-index: 9999999;
+        transform: translate(0%, 15%);
+        width: 100%;
     }
 }

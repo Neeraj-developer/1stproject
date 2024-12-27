@@ -1,63 +1,3 @@
-// privacy checked
-
-let labelCheck = document.getElementById("label_check");
-let checkBox = document.getElementById("check_box");
-
-labelCheck.addEventListener('click', () => {
-    if (checkBox.classList.contains('checked')) {
-        checkBox.classList.remove('checked');   
-    } else{
-        checkBox.classList.add('checked');   
-    }
-});
-
-checkBox.addEventListener('click', () => {
-    if (checkBox.classList.contains('checked')) {
-        checkBox.classList.remove('checked');   
-    } else{
-        checkBox.classList.add('checked');   
-    }
-})
-
-// back btn
-
-let backBtn = document.getElementById('return_btn');
-let popupSlide = document.querySelector('.loginpopup');
-let profileIcon = document.querySelector('.profile_icon');
-
-backBtn.addEventListener('click', () => {
-    if (popupSlide.classList.contains('show')) {
-        popupSlide.classList.remove('show');
-        console.log("Class 'show' removed from back button");
-    } else {
-        popupSlide.classList.add('show');
-        console.log("Class 'show' added to back button");
-    }
-});
-
-profileIcon.addEventListener('click', () => {
-    popupSlide.classList.add('show');
-});
-
-// main popup
-
-let slideStartBtn = document.querySelector('.slide_next_box button');
-let slideClose = document.querySelector('.loading_popup');
-let slideText = document.querySelector('.slide_next_box span');
-
-slideStartBtn.addEventListener('click', () => {
-    slideStartBtn.classList.add('transform');
-    slideText.style.opacity="0";
-
-    setTimeout(() => {
-        slideClose.classList.add('none'); // Replace 'visible' with the class you want to add
-    }, 500);
-});
-
-
-
-
-
 const hoverItems = document.querySelectorAll('.li');
 // Loop through each parent <li>
 hoverItems.forEach((item) => {
@@ -107,6 +47,7 @@ closebtn.addEventListener('click', () => {
         slide.classList.remove('slideopen')
     }
 });
+
 // searchbtn close or open using according to window.innerwidh
 const search_btn = document.getElementById('search_btn');
 const input = document.getElementById('input');
@@ -312,3 +253,23 @@ const startSlideShow = () => {
 startSlideShow();
 // this is for filtercontainer
 
+// privacy checked
+
+let labelCheck = document.getElementById("label_check");
+let checkBox = document.getElementById("check_box");
+
+labelCheck.addEventListener('click', () => {
+    if (checkBox.classList.contains('checked')) {
+        checkBox.classList.remove('checked');   
+    } else{
+        checkBox.classList.add('checked');   
+    }
+});
+
+checkBox.addEventListener('click', () => {
+    if (checkBox.classList.contains('checked')) {
+        checkBox.classList.remove('checked');   
+    } else{
+        checkBox.classList.add('checked');   
+    }
+})
