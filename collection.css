@@ -126,3 +126,19 @@
         align-items: left !important;
     }
 }
+@media screen and (max-width:370px) {
+    .coll_box .img_box{
+        height: 140px !important;
+        width: 140px !important;
+    }
+    .pro_info .box1 span{
+        font-size: 9px !important;
+    }
+    .collection_box .inner_box{
+        align-items: left !important;
+    }
+    .pro_info p{
+        margin: 0;
+        font-size: 12px;
+    }
+}
