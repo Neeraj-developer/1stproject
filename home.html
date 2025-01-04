@@ -310,6 +310,15 @@
             userInfoOverlay.classList.remove('user_info_overlay');
         })
 
+        document.getElementById('user_address').addEventListener('focus', function () {
+    // Check if the textarea has a value
+    if (this.value.trim() !== '') {
+        // Prevent the user from changing the value
+        this.blur(); // Remove focus to prevent editing
+        alert('The textarea already has a value and cannot be changed.');
+    }
+});
+
     </script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
