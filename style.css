@@ -537,6 +537,19 @@ input::placeholder{
 .btns_box .submit.active{
     transform: translate(-80px);
 }
+@media screen and (max-width:350px) {
+    .user_img_2{
+        width: 100px;
+        height: 100px;
+    }
+    .user_details{
+        width: 100%;
+    }
+    .user_name_info textarea{
+        width: 100%;
+    }
+
+}
 @media screen and (min-width: 768px) {
     .container-fluid nav{
         padding: 20px 20px;
