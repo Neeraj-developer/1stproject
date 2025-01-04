@@ -495,7 +495,7 @@ input::placeholder{
     outline: none;
     width: 100%;
 }
-.user_name_info textarea{
+.user_name_info #user_address{
     width: 260px;
     padding: 6px;
     height: 100px;
