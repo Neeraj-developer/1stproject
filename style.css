@@ -498,10 +498,8 @@ input::placeholder{
 .user_name_info #user_address{
     width: 260px;
     padding: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
     height: 100px;
+    outline:none;
 }
 /* btns_box */
 .registraition_popup{
