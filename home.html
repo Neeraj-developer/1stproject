@@ -95,35 +95,40 @@
                 <div class="user_img" onclick="toggleDetails()">
                     <img src="" alt="User Image">
                 </div>
-                <div class="user_details" id="user_details">
-                    <div class="user_img_2">
-                        <img src="" alt="User Image">
-                        <button class="edit_btn">
-                            <i class="fa fa-camera"></i>
-                        </button>
-                    </div>
-                    <hr>
-                    <p class="user_name_info">
-                        Name :
-                        <input type="text" id="user_name" readonly>
-                    </p>
-                    <p class="user_name_info">
-                        Email :
-                        <input type="email" id="user_email" readonly>
-                    </p>
-                    <p class="user_name_info">
-                        Phone No :
-                        <input type="tel" id="user_phone" readonly>
-                    </p>
-                    <p class="user_name_info">
-                        Address :
-                        <textarea id="user_address"></textarea>
-                    </p>
-                </div>
             </div>
-            
          </div>
        </nav>
+
+       <!-- user info -->
+
+       <div class="user_details" id="user_details">
+        <div class="cross_user_btn" id="cross_user_btn">
+            <svg width="25" height="25" viewBox="0 0 0.75 0.75" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.419.375.616.178A.031.031 0 1 0 .572.134L.375.331.178.134a.031.031 0 0 0-.044.044l.197.197-.197.197a.03.03 0 0 0 0 .044.03.03 0 0 0 .044 0L.375.419l.197.197a.03.03 0 0 0 .044 0 .03.03 0 0 0 0-.044Z" style="fill:#fff"/></svg>
+        </div>
+        <div class="user_img_2">
+            <img src="" alt="User Image">
+            <button class="edit_btn">
+                <i class="fa fa-camera"></i>
+            </button>
+        </div>
+        <hr>
+        <p class="user_name_info">
+            Name :
+            <input type="text" id="user_name" readonly>
+        </p>
+        <p class="user_name_info">
+            Email :
+            <input type="email" id="user_email" readonly>
+        </p>
+        <p class="user_name_info">
+            Phone No :
+            <input type="tel" id="user_phone" readonly>
+        </p>
+        <p class="user_name_info">
+            Address :
+            <textarea id="user_address"></textarea>
+        </p>
+    </div>
        <!-- slide cart -->
         <!-- overlay div -->
        <div class="overlay_div" id="overlay_div"></div>
@@ -286,14 +291,19 @@
         }
 
         // Toggle the visibility of user details
+        let userDetails = document.getElementById('user_details');
         function toggleDetails() {
-            const userDetails = document.getElementById('user_details');
-            if (userDetails.style.display === 'none' || userDetails.style.display === '') {
-                userDetails.style.display = 'block';
+            if (userDetails.classList.contains('show')) {
+                userDetails.classList.remove('show');
             } else {
-                userDetails.style.display = 'none';
+                userDetails.classList.add('show');
             }
         }
+        const crossUserBtn = document.getElementById('cross_user_btn');
+        crossUserBtn.addEventListener('click', ()=>{
+            userDetails.classList.remove('show');
+        })
+
     </script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
