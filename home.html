@@ -54,7 +54,7 @@
          <div class="slide" id="slide">
             <button class="closebtn" id="closebtn"><svg width="25" height="25" viewBox="0 0 0.75 0.75" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.419.375.616.178A.031.031 0 1 0 .572.134L.375.331.178.134a.031.031 0 0 0-.044.044l.197.197-.197.197a.03.03 0 0 0 0 .044.03.03 0 0 0 .044 0L.375.419l.197.197a.03.03 0 0 0 .044 0 .03.03 0 0 0 0-.044Z" style="fill:#2C3E50"/></svg></button>
             <ul class="ul" id="ul_block">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="home.html">Home</a></li>
                 <li class="li"><a href="product.html">Product</a> <i class="fa-solid fa-plus icon"></i>
                     <ul class="ul hover_link">
                         <li>Shampoo</li>
@@ -87,16 +87,41 @@
         
         <!-- cart icon -->
          <div class="cart_box">
-            <svg class="profile_icon" fill="#fff" width="24px" height="24px" viewBox="0 0 1.26 1.26" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>user-line</title>
-                <path d="M0.63 0.595a0.245 0.245 0 1 0 -0.245 -0.245 0.245 0.245 0 0 0 0.245 0.245m0 -0.42a0.175 0.175 0 1 1 -0.175 0.175 0.175 0.175 0 0 1 0.175 -0.175" class="clr-i-outline clr-i-outline-path-1"/>
-                <path d="M1.066 0.853a0.601 0.601 0 0 0 -0.873 0A0.07 0.07 0 0 0 0.175 0.901V1.085a0.07 0.07 0 0 0 0.07 0.07h0.77a0.07 0.07 0 0 0 0.07 -0.07v-0.184a0.07 0.07 0 0 0 -0.019 -0.048M1.015 1.085H0.245v-0.184a0.531 0.531 0 0 1 0.77 0Z" class="clr-i-outline clr-i-outline-path-2"/>
-                <path x="0" y="0" width="36" height="36" fill-opacity="0" d="M0 0H1.26V1.26H0V0z"/>
-            </svg>
             <button class="cart_btn" id="cart_btn">
                 <svg width="25px" height="25px" viewBox="0 0 1 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="icomoon-ignore"/><path d="M0.957 0.3H0.257L0.2 0.067H0.043v0.033h0.131l0.162 0.67a0.083 0.083 0 0 0 -0.06 0.08 0.083 0.083 0 1 0 0.167 0c0 -0.019 -0.006 -0.036 -0.017 -0.05h0.234a0.083 0.083 0 0 0 -0.017 0.05 0.083 0.083 0 1 0 0.083 -0.083H0.37l-0.016 -0.067h0.468L0.957 0.3zM0.41 0.85c0 0.028 -0.022 0.05 -0.05 0.05s-0.05 -0.022 -0.05 -0.05 0.022 -0.05 0.05 -0.05 0.05 0.022 0.05 0.05m0.367 0a0.05 0.05 0 0 1 -0.1 0 0.05 0.05 0 0 1 0.1 0m-0.431 -0.183L0.265 0.333h0.646L0.797 0.667z" fill="#fff"/></svg>
                 <sup class="cart_item_count" id="cart_item_count">0</sup>
             </button>
+            <div class="user_info">
+                <div class="user_img" onclick="toggleDetails()">
+                    <img src="" alt="User Image">
+                </div>
+                <div class="user_details" id="user_details">
+                    <div class="user_img_2">
+                        <img src="" alt="User Image">
+                        <button class="edit_btn">
+                            <i class="fa fa-camera"></i>
+                        </button>
+                    </div>
+                    <hr>
+                    <p class="user_name_info">
+                        Name :
+                        <input type="text" id="user_name" readonly>
+                    </p>
+                    <p class="user_name_info">
+                        Email :
+                        <input type="email" id="user_email" readonly>
+                    </p>
+                    <p class="user_name_info">
+                        Phone No :
+                        <input type="tel" id="user_phone" readonly>
+                    </p>
+                    <p class="user_name_info">
+                        Address :
+                        <textarea id="user_address"></textarea>
+                    </p>
+                </div>
+            </div>
+            
          </div>
        </nav>
        <!-- slide cart -->
@@ -127,191 +152,6 @@
         </div>
        </div>
        <!-- end navbar -->
-
-        <!-- l-oginpopup -->
-        <div class="loginpopup" id="loginpopup" >
-            <div class="main_popup">
-                <div>
-                    <button class="back_btn" id="return_btn">
-                        <svg width="25" fill="#fff" height="25" viewBox="-2.453 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m8.031 2 1.063 1.063L4 8.188l5.094 5.125-1.063 1.063-6.125-6.188z"/></svg>
-                    </button>
-                </div>
-                <h1>Hello!</h1>
-                <div class="form_div">
-                    <form onsubmit="handleFormSubmission(event)">
-                        <div class="email_box">
-                            <label for="email">Email:</label>
-                            <input type="email" autocomplete="off" placeholder="xyz@gmail.com" id="email_login" required>
-                        </div>
-                
-                        <div class="pass_box">
-                            <label for="password">Password:</label>
-                            <input type="password" autocomplete="off" placeholder="*******" id="password_login" required>
-                        </div>
-                
-                        <a href="#">Forget Password?</a>
-                        <button type="submit" id="sign_btn">Sign in</button>
-                
-                        <span>or</span>
-                    </form>
-                    <button>
-                        <svg width="25" height="25" viewBox="0 0 0.5 0.5" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#4285F4" d="M.466.255A.2.2 0 0 0 .462.211H.255v.084h.119A.1.1 0 0 1 .33.361v.055h.071A.21.21 0 0 0 .467.255"/><path fill="#34A853" d="M.254.469A.2.2 0 0 0 .4.416L.329.361a.14.14 0 0 1-.075.021.13.13 0 0 1-.123-.09H.058v.056a.22.22 0 0 0 .196.121"/><path fill="#FBBC04" d="M.131.292a.13.13 0 0 1 0-.084V.152H.058a.22.22 0 0 0 0 .196z"/><path fill="#EA4335" d="M.254.118a.12.12 0 0 1 .084.033L.401.089A.2.2 0 0 0 .254.032a.22.22 0 0 0-.197.121l.074.055a.13.13 0 0 1 .123-.09"/></svg>
-                    </button>
-
-                    <div class="read_info_box">
-                        <div class="check_box" id="check_box">
-                            <svg width="25" height="25" viewBox="0 0 0.66 0.66" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.275.495A.03.03 0 0 1 .256.488L.119.35A.027.027 0 0 1 .158.312L.276.43.504.202a.027.027 0 1 1 .039.039L.295.488a.03.03 0 0 1-.019.008" style="fill:#023047"/></svg>
-                        </div>
-                        <span id="label_check">I agree to the <b>Terms & Conditions</b> and <b>Privacy Policy</b></span>
-                    </div>
-                    <div class="new_acount_box">
-                        <p>Create a new account? <span id="new_account">click here</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="registraition_popup" id="registraition_popup">
-            <div class="form_step_container">
-                <div style="width: 100%;padding-left: 20px;">
-                    <button class="back_btn_2" id="back_btn_2">
-                        <svg width="25" fill="#fff" height="25" viewBox="-2.453 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m8.031 2 1.063 1.063L4 8.188l5.094 5.125-1.063 1.063-6.125-6.188z"/></svg>
-                    </button>
-                </div>
-
-                <div class="registraion_text">
-                    <h1>Sign Up</h1>
-                </div>
-                <div class="first">
-                    <div class="progress_step">
-                        <!-- Step 1 -->
-                        <div class="step1 step">
-                            <div class="step_slide active" id="step1">
-                                <span>1</span>
-                            </div>
-                        </div>
-                        <!-- Progress Line -->
-                        <div class="progress_line">
-                            <div class="pro_width" id=""></div>
-                        </div>
-        
-                        <!-- Step 2 -->
-                        <div class="step2 step">
-                            <div class="step_slide" id="step2">
-                                <span>2</span>
-                            </div>
-                        </div>
-                        <!-- Progress Line -->
-                        <div class="progress_line">
-                            <div class="pro_width" id=""></div>
-                        </div>
-        
-                        <!-- Step 3 -->
-                        <div class="step3 step">
-                            <div class="step_slide" id="step3">
-                                <span>3</span>
-                            </div>
-                        </div>
-                        <!-- Progress Line -->
-                        <div class="progress_line">
-                            <div class="pro_width" id=""></div>
-                        </div>
-        
-                        <!-- Step 4 -->
-                        <div class="step4 step">
-                            <div class="step_slide" id="step4">
-                                <span>4</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="car_slide">
-                        <svg id="car_slide" width="30" height="30" viewBox="0 0 1.35 1.35" xmlns="http://www.w3.org/2000/svg" fill="#">
-                            <path class="clr-i-solid clr-i-solid-path-1" d="M1.008.535A.84.84 0 0 0 .737.258.36.36 0 0 0 .4.232a.32.32 0 0 0-.181.24L.211.524H.174a.097.097 0 0 0-.099.098v.321a.03.03 0 0 0 .032.032h.065V.96A.216.216 0 0 1 .461.756L.424.793a.17.17 0 0 0-.163.059.1.1 0 0 0-.024.035.169.169 0 1 0 .319.088h.206V.96a.216.216 0 0 1 .289-.204l-.037.037a.17.17 0 0 0-.163.059.1.1 0 0 0-.024.035.169.169 0 1 0 .319.087h.098a.03.03 0 0 0 .032-.032V.875a.35.35 0 0 0-.267-.34M.45.525H.3q.001-.02.006-.04A.24.24 0 0 1 .451.297Zm-.061.538A.094.094 0 1 1 .483.969a.094.094 0 0 1-.094.094m.324-.35H.601V.638h.112ZM.488.525V.28a.3.3 0 0 1 .203.043A.7.7 0 0 1 .9.525Zm.49.538a.094.094 0 1 1 .094-.094.094.094 0 0 1-.094.094"/>
-                            <path fill="none" d="M0 0h1.35v1.35H0z"/>
-                        </svg>
-                    </div>
-                </div>
-        
-                <div class="form_container">
-                    <div class="form_inner" id="form_inner">
-                        <div class="inner1">
-                            <div class="input_box">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                            </div>
-                            <div class="input_box">
-                                <label for="lastname">Last Name:</label>
-                                <input type="text" id="lastname" name="lastname" placeholder="Enter your Last Name">
-                            </div>
-                        </div>
-                        <div class="inner1">
-                            <div class="input_box">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email">
-                            </div>
-                            <div class="input_box">
-                                <label for="password">Password:</label>
-                                <input type="password" id="password" name="password" placeholder="Enter your password">
-                                <!-- <span>
-                                    <i class="fa-solid fa-eye-slash"></i>
-                                </span> -->
-                            </div>
-                        </div>
-                        <div class="inner1">
-                            <div class="input_box">
-                                <label for="phone">Phone No.:</label>
-                                <input type="tel" name="phone" id="phone" placeholder="Enter your phone">
-                            </div>
-                            <div class="input_box">
-                                <label for="address">Address:</label>
-                                <input type="text" name="address" id="address" placeholder="Enter your address">
-                            </div>
-                        </div>
-                        <div class="inner1">
-                            <div class="input_box">
-                                <label for="zip">Zip Code:</label>
-                                <input type="tel" name="zip" id="zip" placeholder="Enter city zip">
-                            </div>
-                            <div class="input_box">
-                                <label for="zip">Select you photo:</label>
-                                <input type="file" name="zip" id="photo_upload" minlength="6" maxlength="6">
-                            </div>
-                            <div class="input_box checkbox_div">
-                                <div class="check_box_2" id="check_box_2">
-                                    <svg width="25" height="25" viewBox="0 0 0.66 0.66" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" class="icon flat-color"><path d="M.275.495A.03.03 0 0 1 .256.488L.119.35A.027.027 0 0 1 .158.312L.276.43.504.202a.027.027 0 1 1 .039.039L.295.488a.03.03 0 0 1-.019.008" style="fill:#fff"/></svg>
-                                </div>
-                                <span>I have accepted all conditions & Privacy & Policy.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="btns_box">
-                    <button class="prev" id="prev">back</button>
-                    <button class="next" id="next">Next</button>
-                    <button type="submit" class="submit" id="submit">Submit</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- first popup -->
-        <div class="loading_popup">
-            <div class="loading_inner">
-                <!-- <h1>Welcome to, <br> </h1> -->
-                <div class="loading_ban_img">
-                    <dotlottie-player src="https://lottie.host/0aecae5b-a2fa-4151-bd1a-0aff441ccec6/2FCpPvIWTt.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-                </div>
-                <div class="loading_content">
-                    <div class="slide_next_box">
-                        <button class="slide_btn">
-                            <svg width="20" fill="#fff" height="20" viewBox="-2.406 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M3.063 14.375 2 13.312l5.094-5.125L2 3.063 3.063 2l6.125 6.188z"/></svg>
-                        </button>
-                        <span>Enter the site</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
        <!-- imageslider started -->
        <div class="image_slider_box">
@@ -423,8 +263,38 @@
 
 
     <script src="script.js"></script>
+    <script src="multiimageslider.js"></script>
     <script src="collection.js"></script>
     <script src="timer.js"></script>
+    <script>
+    // Retrieve the last registered user's data
+    const userRecords = JSON.parse(localStorage.getItem("users")) || [];
+        if (userRecords.length > 0) {
+            const lastUser = userRecords[userRecords.length - 1]; // Get the most recent user
+
+            // Populate the user image and details
+            document.querySelector('.user_img img').src = lastUser.userImage || '';
+            document.querySelector('.user_img_2 img').src = lastUser.userImage || '';
+            document.getElementById('user_name').value = `${lastUser.name} ${lastUser.lastName}`;
+            document.getElementById('user_email').value = `${lastUser.email}`;
+            document.getElementById('user_phone').value = `${lastUser.phone}`;
+            document.getElementById('user_address').value = `${lastUser.address}, Zip Code: ${lastUser.zipCode}`;
+        } else {
+            // Default image and message
+            document.querySelector('.user_img img').src = 'default-user.png'; // Replace with your default image path
+            document.getElementById('user_details').textContent = "No user data found!";
+        }
+
+        // Toggle the visibility of user details
+        function toggleDetails() {
+            const userDetails = document.getElementById('user_details');
+            if (userDetails.style.display === 'none' || userDetails.style.display === '') {
+                userDetails.style.display = 'block';
+            } else {
+                userDetails.style.display = 'none';
+            }
+        }
+    </script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>

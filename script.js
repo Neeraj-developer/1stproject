@@ -273,3 +273,269 @@ checkBox.addEventListener('click', () => {
         checkBox.classList.add('checked');   
     }
 })
+function displayUserInfo() {
+    // Retrieve user info from localStorage
+    const firstName = localStorage.getItem("userFirstName");
+    const profileImage = localStorage.getItem("userProfileImage");
+
+    // Debugging logs
+    console.log("First Name:", firstName);
+    console.log("Profile Image:", profileImage);
+
+    // Get references to the elements
+    const userInfoDiv = document.querySelector(".user_info");
+    const profileIcon = document.querySelector(".profile_icon");
+    const userNameSpan = document.getElementById("user_name");
+    const profileImageEl = document.getElementById("profile_image");
+
+    // Check if user data exists
+    if (firstName && profileImage) {
+        // Update the user info section
+        userInfoDiv.style.display = "flex"; // Show user info
+        userNameSpan.textContent = firstName; // Set user's first name
+        profileImageEl.src = profileImage; // Set user's profile picture
+
+        // Hide the profile SVG
+        profileIcon.style.display = "none";
+    } else {
+        // If no user data, ensure the user info is hidden
+        userInfoDiv.style.display = "none";
+        profileIcon.style.display = "block";
+    }
+}
+
+let newAccountBtn = document.getElementById('new_account');
+let registraitionPopup = document.getElementById('registraition_popup');
+let popupSlide2 = document.getElementById('loginpopup');
+let backBtn2 = document.getElementById('back_btn_2');
+
+newAccountBtn.addEventListener('click', ()=>{
+    registraitionPopup.classList.add('active');
+    popupSlide2.classList.remove('show')
+})
+
+backBtn2.addEventListener('click', ()=>{
+    registraitionPopup.classList.remove('active');
+})
+
+let nextBtn = document.getElementById('next');
+let prevBtn = document.getElementById('prev');
+let submitBtn = document.getElementById('submit');
+let carSlide = document.getElementById('car_slide');
+let formSlide = document.getElementById('form_inner');
+let proWidth = document.querySelectorAll('.pro_width');
+let stepSlide = document.querySelectorAll('.step_slide');
+let currentSlide = 0;
+
+// Function to slide the progress line
+function proWidthSlide(step) {
+    proWidth.forEach((slide, index) => {
+        if (index < step) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+}
+
+// Function to slide step divs
+function stepSlidePro(step) {
+    stepSlide.forEach((slideDiv, index) => {
+        if (index <= step) { 
+            slideDiv.classList.add('active');
+        } else {
+            slideDiv.classList.remove('active');
+        }
+    });
+}
+
+// Function to update car color based on the current slide
+function updateCarColor() {
+    switch(currentSlide) {
+        case 0:
+            carSlide.style.fill = "#2a2121ab"; // Initial color
+            break;
+        case 1:
+            carSlide.style.fill = "#a3bfdb"; // Second step color
+            break;
+        case 2:
+            carSlide.style.fill = "#347ec8"; // Third step color (example)
+            break;
+        case 3:
+            carSlide.style.fill = "#2C3E50"; // Fourth step color (example)
+            break;
+        default:
+            carSlide.style.fill = "#2C3E50"; // Default color if new steps are added
+    }
+}
+
+// Function to handle the translation of the car based on screen width
+function updateCarPosition() {
+    let translation = currentSlide * (window.innerWidth >= 520 ? 110 : 90);
+    carSlide.style.transform = `translateX(${translation}px)`;
+}
+
+// Function to handle form sliding
+function updateFormPosition() {
+    let translation;
+
+    if (window.innerWidth <= 520) {
+        translation = currentSlide * -100; // Each slide moves by percentage for very small screens
+        formSlide.style.transform = `translateX(${translation}%)`;
+    } else if (window.innerWidth <= 768) {
+        translation = currentSlide * -500; // Each slide moves by 500px for medium screens
+        formSlide.style.transform = `translateX(${translation}px)`;
+    } else {
+        translation = currentSlide * -500; // Each slide moves by 500px for larger screens
+        formSlide.style.transform = `translateX(${translation}px)`;
+    }
+
+    formSlide.style.transition = 'transform 0.6s linear'; // Ensure smooth transition
+}
+function updateFormPosition() {
+    let translation;
+
+    if (window.innerWidth <= 520) {
+        translation = currentSlide * -100; // Each slide moves by percentage for very small screens
+        formSlide.style.transform = `translateX(${translation}%)`;
+    } else if (window.innerWidth <= 768) {
+        translation = currentSlide * -500; // Each slide moves by 500px for medium screens
+        formSlide.style.transform = `translateX(${translation}px)`;
+    } else {
+        translation = currentSlide * -500; // Each slide moves by 500px for larger screens
+        formSlide.style.transform = `translateX(${translation}px)`;
+    }
+
+    formSlide.style.transition = 'transform 0.6s linear'; // Ensure smooth transition
+}
+
+
+// Function to show or hide buttons based on currentSlide
+function toggleButtons() {
+    // If on the last step
+    if (currentSlide === stepSlide.length - 1) {
+        nextBtn.classList.add('active'); // Hide Next button
+        submitBtn.classList.add('active');  // Show Submit button
+    } else {
+        nextBtn.classList.remove('active');   // Show Next button
+        submitBtn.classList.remove('active');  // Hide Submit button
+    }
+
+    // Show the Prev button only if not on the first slide
+    if (currentSlide > 0) {
+        prevBtn.classList.add('active'); // Show Prev button
+    } else {
+        prevBtn.classList.remove('active'); // Hide Prev button
+    }
+}
+
+// Next button click event
+nextBtn.addEventListener('click', () => {
+    if (currentSlide < stepSlide.length - 1) {
+        currentSlide++; 
+
+        // Update progress bar and step slides
+        proWidthSlide(currentSlide);
+        stepSlidePro(currentSlide);
+
+        // Apply translation for the carSlide and form
+        updateCarPosition();
+        updateFormPosition();
+
+        // Update car color for the active step
+        updateCarColor();
+
+        // Toggle buttons visibility
+        toggleButtons();
+    }
+});
+
+// Previous button click event
+prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+        currentSlide--; // Decrement currentSlide
+
+        // Update progress bar and step slides
+        proWidthSlide(currentSlide);
+        stepSlidePro(currentSlide);
+
+        // Apply translation for the carSlide and form
+        updateCarPosition();
+        updateFormPosition();
+
+        // Update car color for the active step
+        updateCarColor();
+
+        // Toggle buttons visibility
+        toggleButtons();
+    }
+});
+
+let checkBox2 = document.getElementById("check_box_2");
+
+checkBox2.addEventListener('click', () => {
+    if (checkBox2.classList.contains('checked')) {
+        checkBox2.classList.remove('checked');   
+    } else{
+        checkBox2.classList.add('checked');   
+    }
+})
+
+submitBtn.addEventListener('click', () => {
+    // Get the values from the form fields
+    let name, lastName, email, password, phoneNo, address, zipCode, images_user;
+    name = document.getElementById('name').value;
+    lastName = document.getElementById('lastname').value;
+    email = document.getElementById('email').value;
+    password = document.getElementById('password').value;
+    phoneNo = document.getElementById('phone').value;
+    address = document.getElementById('address').value;
+    zipCode = document.getElementById('zip').value;
+    images_user = document.getElementById('photo_upload').files[0];
+
+    if (!images_user) {
+        alert("Please upload an image");
+        return;
+    }
+
+    let user_record = JSON.parse(localStorage.getItem("users")) || [];
+
+    if (user_record.some((v) => v.email === email)) {
+        alert("Duplicate data");
+    } else {
+        // Convert image file to a base64 string
+        const reader = new FileReader();
+        reader.onload = () => {
+            const base64Image = reader.result;
+
+            // Push the new user data into the array
+            user_record.push({
+                "name": name,
+                "lastName": lastName,
+                "email": email,
+                "password": password,
+                "phone": phoneNo,
+                "address": address,
+                "zipCode": zipCode,
+                "userImage": base64Image
+            });
+
+            // Save the updated user records back to localStorage
+            localStorage.setItem("users", JSON.stringify(user_record));
+
+            // Show a success message
+            alert("Form Submitted!");
+             // Redirect to another page
+             window.location.href = "home.html";
+            // Update the user image in the UI
+            const userImageDiv = document.querySelector('.user_img img');
+            userImageDiv.src = base64Image;
+        };
+        reader.readAsDataURL(images_user);
+    }
+});
+
+
+
+// Call this function on page load
+window.onload = displayUserInfo;

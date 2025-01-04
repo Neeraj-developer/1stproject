@@ -41,6 +41,9 @@
     display: none;
     z-index: 999999;
 }
+#new_account{
+    cursor: pointer;
+}
 .timer_overlay.open{
     display: block;
 }
@@ -191,9 +194,9 @@
     background-color: #34495E;
 }
 
-.countdown_timer.hidden {
+/* .countdown_timer.hidden {
     display: none;
-}
+} */
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
