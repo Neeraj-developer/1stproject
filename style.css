@@ -406,7 +406,7 @@ input::placeholder{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 } */
  .user_details{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-1000%, -50%);
@@ -420,6 +420,21 @@ input::placeholder{
     padding: 20px;
     z-index: 999;
  }
+ #user_info_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0000005e;
+    display: block !important;
+    z-index: 999999;
+    transition: all .4s ease;
+    transform: translateX(100%);
+ }
+ .user_info_overlay{
+    transform: translateX(0) !important;
+ }
  .cross_user_btn{
     padding: 10px;
     background-color: #023047;
@@ -429,6 +444,7 @@ input::placeholder{
  }
  .user_details.show{
     transform: translate(-50%, -50%);
+    z-index: 9999999;
  }
  .user_img_2{
     height: 120px;

@@ -128,7 +128,9 @@
             Address :
             <textarea id="user_address"></textarea>
         </p>
-    </div>
+        </div>
+
+        <div class="" id="user_info_overlay"></div>
        <!-- slide cart -->
         <!-- overlay div -->
        <div class="overlay_div" id="overlay_div"></div>
@@ -292,16 +294,20 @@
 
         // Toggle the visibility of user details
         let userDetails = document.getElementById('user_details');
+        let userInfoOverlay = document.getElementById('user_info_overlay');
         function toggleDetails() {
             if (userDetails.classList.contains('show')) {
                 userDetails.classList.remove('show');
+                userInfoOverlay.classList.remove('user_info_overlay');
             } else {
                 userDetails.classList.add('show');
+                userInfoOverlay.classList.add('user_info_overlay');
             }
         }
         const crossUserBtn = document.getElementById('cross_user_btn');
         crossUserBtn.addEventListener('click', ()=>{
             userDetails.classList.remove('show');
+            userInfoOverlay.classList.remove('user_info_overlay');
         })
 
     </script>
