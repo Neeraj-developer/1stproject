@@ -566,6 +566,8 @@ input::placeholder{
 .btns_box .submit.active{
     transform: translate(-80px);
 }
+
+
 @media screen and (max-width:350px) {
     .user_img_2{
         width: 100px;

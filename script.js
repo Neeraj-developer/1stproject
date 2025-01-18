@@ -181,6 +181,85 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
+   // Product Data Array
+   const collection = [
+    {
+        id: 1,
+        datasetName: "women",
+        name: "Women's Printed Dress",
+        price: "Rs.399.00",
+        image: "https://images.bewakoof.com/t1080/women-s-white-all-over-printed-oversized-dress-582002-1726836740-1.jpg"
+    },
+    {
+        datasetName: "men",
+        name: "Men's Black T-shirt",
+        price: "Rs.499.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-t-shirt-106-1701423878-1.jpg"
+    },
+    {
+        datasetName: "shoes",
+        name: "Black Sports Shoes",
+        price: "Rs.1,095.00",
+        image: "https://images.bewakoof.com/t1080/men-s-black-sports-shoes-651218-1729070381-1.jpg"
+    },
+    {
+        datasetName: "men",
+        name: "Men's Black Joggers",
+        price: "Rs.1,199.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-joggers-330841-1727418974-1.jpg"
+    },
+    {
+        datasetName: "women",
+        name: "Women's Brown Jacket",
+        price: "Rs.1,699.00",
+        image: "https://images.bewakoof.com/t640/women-s-brown-dramatic-graphic-printed-super-loose-jacket-597102-1725341520-1.jpg"
+    },
+    {
+        datasetName: "women",
+        name: "Printed Oversized T-shirt",
+        price: "Rs.899.00",
+        image: "https://images.bewakoof.com/t640/women-s-granite-green-bambi-sketch-graphic-printed-oversized-t-shirt-647243-1733230733-1.jpg"
+    },
+    {
+        datasetName: "men",
+        name: "Men's Black T-shirt",
+        price: "Rs.499.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-t-shirt-106-1701423878-1.jpg"
+    },
+    {
+        datasetName: "shoes",
+        name: "Black Sports Shoes",
+        price: "Rs.1,095.00",
+        image: "https://images.bewakoof.com/t1080/men-s-black-sports-shoes-651218-1729070381-1.jpg"
+    },
+    {
+        datasetName: "men",
+        name: "Men's Black Joggers",
+        price: "Rs.1,199.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-joggers-330841-1727418974-1.jpg"
+    }
+];
+
+
+        
+const sliderContainer = document.getElementById("multi_img_inner");
+
+collection.forEach((product, index) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("multi_collection");
+    productCard.dataset.name = product.datasetName; // Set dataset name for filtering
+    productCard.innerHTML = `
+        <div class="collection_img_box">
+            <a href="product.html">
+                <img src="${product.image}" alt="${product.name}">
+            </a>
+        </div>
+    `;
+    sliderContainer.appendChild(productCard);
+});
+  
+
+
 
 // image slider
 const leftBtn = document.getElementById('left_slide');
@@ -253,6 +332,7 @@ const startSlideShow = () => {
 startSlideShow();
 // this is for filtercontainer
 
+
 // privacy checked
 
 let labelCheck = document.getElementById("label_check");
@@ -303,6 +383,8 @@ function displayUserInfo() {
         profileIcon.style.display = "block";
     }
 }
+
+
 
 let newAccountBtn = document.getElementById('new_account');
 let registraitionPopup = document.getElementById('registraition_popup');
@@ -537,5 +619,3 @@ submitBtn.addEventListener('click', () => {
 
 // Call this function on page load
 window.onload = displayUserInfo;
-
-// filter btn option

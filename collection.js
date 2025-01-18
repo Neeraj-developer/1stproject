@@ -36,8 +36,27 @@ const products = [
         name: "Printed Oversized T-shirt",
         price: "Rs.899.00",
         image: "https://images.bewakoof.com/t640/women-s-granite-green-bambi-sketch-graphic-printed-oversized-t-shirt-647243-1733230733-1.jpg"
+    },
+    {
+        datasetName: "men",
+        name: "Men's Black T-shirt",
+        price: "Rs.499.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-t-shirt-106-1701423878-1.jpg"
+    },
+    {
+        datasetName: "shoes",
+        name: "Black Sports Shoes",
+        price: "Rs.1,095.00",
+        image: "https://images.bewakoof.com/t1080/men-s-black-sports-shoes-651218-1729070381-1.jpg"
+    },
+    {
+        datasetName: "men",
+        name: "Men's Black Joggers",
+        price: "Rs.1,199.00",
+        image: "https://images.bewakoof.com/t640/men-s-black-joggers-330841-1727418974-1.jpg"
     }
 ];
+
 
 // Reference to the Container
 const container = document.getElementById("productContainer");
@@ -171,6 +190,83 @@ const filterCards = (e) => {
 };
 
 // mobile devices
+
+const leftSlideBtn = document.querySelector(".left_img_slide_btn");
+const rightSlideBtn = document.querySelector(".right_img_slide_btn");
+const sliderTransform = document.getElementById("multi_img_inner");
+const multSlideImg = document.querySelectorAll("#multi_img_inner img");
+let currentIndex = 0;
+
+const totalImages = multSlideImg.length; // Get the total number of images
+const imageWidth = multSlideImg[0].clientWidth; // Get the width of the first image
+const maxTransformLarge = 3; // Allow 3 transformations on larger screens
+const maxTransformSmall = 6; // Allow 6 transformations on smaller screens
+let maxIndex = (window.innerWidth > 768 && window.innerWidth <= 1500) ? maxTransformLarge : maxTransformSmall; // Initial max index based on screen width
+let autoSlideInterval;
+
+// Function to handle auto-slide
+function autoSlide() {
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Restart from the first image if max limit reached
+    }
+    sliderTransform.style.transform = `translateX(-${imageWidth * currentIndex}px)`; // Slide to the right
+}
+
+// Function to reset auto-slide timer
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval); // Clear the previous interval
+    autoSlideInterval = setInterval(autoSlide, 3000); // Restart auto-slide with 3 seconds interval
+}
+
+// Disable sliding functionality but keep buttons visible for screen width > 1500px
+function disableSliding() {
+    leftSlideBtn.removeEventListener("click", leftSlideHandler);
+    rightSlideBtn.removeEventListener("click", rightSlideHandler);
+    clearInterval(autoSlideInterval); // Stop auto-slide
+}
+
+// Enable sliding functionality when screen width is within the allowed range
+function enableSliding() {
+    leftSlideBtn.addEventListener("click", leftSlideHandler);
+    rightSlideBtn.addEventListener("click", rightSlideHandler);
+    resetAutoSlide(); // Restart auto-slide functionality
+}
+
+// Left slide button event handler
+function leftSlideHandler() {
+    if (currentIndex > 0) { // Ensure we don't slide past the first image
+        currentIndex--; // Decrease the index to slide left
+        sliderTransform.style.transform = `translateX(-${imageWidth * currentIndex}px)`; // Slide to the left
+    }
+    resetAutoSlide(); // Reset auto-slide timer when user interacts
+}
+
+// Right slide button event handler
+function rightSlideHandler() {
+    if (currentIndex < maxIndex) {  // Ensure we don't exceed the max allowed transformations
+        currentIndex++; // Increase the index to slide right
+        sliderTransform.style.transform = `translateX(-${imageWidth * currentIndex}px)`; // Slide to the right
+    }
+    resetAutoSlide(); // Reset auto-slide timer when user interacts
+}
+
+// Initialize auto-slide if the screen width is within the allowed range
+if (window.innerWidth <= 1500) {
+    autoSlideInterval = setInterval(autoSlide, 3000); // Start auto-slide with 3 seconds interval
+} else {
+    disableSliding(); // Disable sliding for screens larger than 1500px
+}
+
+// Recalculate the maximum index and enable/disable sliding when screen size changes (responsive behavior)
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1500) {
+        disableSliding(); // Disable sliding when screen width is greater than 1500px
+    } else {
+        enableSliding(); // Enable sliding when screen width is less than or equal to 1500px
+    }
+});
 
 // Add event listeners to filter buttons
 filterButton.forEach(button => button.addEventListener("click", filterCards));
