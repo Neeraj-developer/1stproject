@@ -622,6 +622,7 @@ input::placeholder{
         align-items: center;
         justify-content: center;
         background: #023047;
+        border: none;
         border-radius: 50%;
     }
     .main_popup h1{
