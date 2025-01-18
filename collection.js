@@ -73,6 +73,16 @@ const proBox = document.querySelectorAll('.coll_box');
 const cartAnimate = document.querySelectorAll('.cart_animate');
 const quickLinkBtn = document.querySelectorAll('.quick_btn');
 const fav_icon = document.querySelectorAll('.fav_icon');
+const slideCart = document.querySelector(".slide_cart_click ");
+const overlayCart = document.querySelector(".overlay_cart")
+
+cartAnimate.forEach((button)=>{
+    button.addEventListener("click", ()=>{
+        slideCart.classList.add("to_left");
+        overlayCart.classList.add("remove_overlay");
+        
+    })
+})
 
 // Handle mouseover and mouseleave effects
 proBox.forEach((box, index) => {
