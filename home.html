@@ -126,7 +126,7 @@
         </p>
         <p class="user_name_info">
             Address :
-            <textarea id="user_address"></textarea>
+            <textarea id="user_address" readonly></textarea>
         </p>
         </div>
 
@@ -309,6 +309,14 @@
             userDetails.classList.remove('show');
             userInfoOverlay.classList.remove('user_info_overlay');
         })
+
+        document.getElementById('user_address').addEventListener('focus', function () {
+    // Check if the textarea has a value
+    if (this.value.trim() !== '') {
+        // Prevent the user from changing the value
+        this.blur(); // Remove focus to prevent editing
+    }
+});
 
     </script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
