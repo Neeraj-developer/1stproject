@@ -1,33 +1,39 @@
 // Product Data Array
 const products = [
     {
-        id:1,
+        id: 1,
+        datasetName: "women",
         name: "Women's Printed Dress",
         price: "Rs.399.00",
         image: "https://images.bewakoof.com/t1080/women-s-white-all-over-printed-oversized-dress-582002-1726836740-1.jpg"
     },
     {
+        datasetName: "men",
         name: "Men's Black T-shirt",
         price: "Rs.499.00",
         image: "https://images.bewakoof.com/t640/men-s-black-t-shirt-106-1701423878-1.jpg"
     },
     {
+        datasetName: "shoes",
         name: "Black Sports Shoes",
         price: "Rs.1,095.00",
         image: "https://images.bewakoof.com/t1080/men-s-black-sports-shoes-651218-1729070381-1.jpg"
     },
     {
+        datasetName: "men",
         name: "Men's Black Joggers",
         price: "Rs.1,199.00",
         image: "https://images.bewakoof.com/t640/men-s-black-joggers-330841-1727418974-1.jpg"
     },
     {
+        datasetName: "women",
         name: "Women's Brown Jacket",
         price: "Rs.1,699.00",
         image: "https://images.bewakoof.com/t640/women-s-brown-dramatic-graphic-printed-super-loose-jacket-597102-1725341520-1.jpg"
     },
     {
-        name: " Printed Oversized T-shirt",
+        datasetName: "women",
+        name: "Printed Oversized T-shirt",
         price: "Rs.899.00",
         image: "https://images.bewakoof.com/t640/women-s-granite-green-bambi-sketch-graphic-printed-oversized-t-shirt-647243-1733230733-1.jpg"
     }
@@ -40,6 +46,7 @@ const container = document.getElementById("productContainer");
 products.forEach((product, index) => {
     const productCard = document.createElement("div");
     productCard.classList.add("coll_box");
+    productCard.dataset.name = product.datasetName; // Set dataset name for filtering
     productCard.innerHTML = `
         <div class="img_box">
             <img src="${product.image}" alt="${product.name}">
@@ -60,62 +67,52 @@ products.forEach((product, index) => {
     `;
     container.appendChild(productCard);
 });
-// mouseover effect slider
+
+// Hover effect in product box
 const proBox = document.querySelectorAll('.coll_box');
 const cartAnimate = document.querySelectorAll('.cart_animate');
 const quickLinkBtn = document.querySelectorAll('.quick_btn');
 const fav_icon = document.querySelectorAll('.fav_icon');
 
-// Hover effect in product box
-if (proBox && quickLinkBtn) {
-    proBox.forEach((box, index) => {
-        box.addEventListener('mouseover', () => {
-            quickLinkBtn[index]?.classList.add('transform');
-            cartAnimate[index]?.classList.add('transfor_cart');
-        });
-        box.addEventListener('mouseleave', () => {
-            quickLinkBtn[index]?.classList.remove('transform');
-            cartAnimate[index]?.classList.remove('transfor_cart');
-        });
+// Handle mouseover and mouseleave effects
+proBox.forEach((box, index) => {
+    box.addEventListener('mouseover', () => {
+        quickLinkBtn[index]?.classList.add('transform');
+        cartAnimate[index]?.classList.add('transfor_cart');
     });
-}
-// Handle clicking the favorite icon
-if (fav_icon) {
-    fav_icon.forEach((icon, index) => {
-        icon.addEventListener('click', () => {
-            // Get product info to save to localStorage
-            const product = products[index];
-            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-            // Check if the product is already in favorites
-            const isFavorited = favorites.some(fav => fav.name === product.name);
-            if (isFavorited) {
-                // Remove from favorites if already added
-                favorites = favorites.filter(fav => fav.name !== product.name);
-                console.log(`${product.name} removed from favorites`)
-                // Update icon
-                icon.classList.remove('fa-solid');
-                icon.classList.add('fa-regular');
-            } else {
-                // Add to favorites if not already added
-                favorites.push(product);
-                console.log(`${product.name} added to favorites`);
+    box.addEventListener('mouseleave', () => {
+        quickLinkBtn[index]?.classList.remove('transform');
+        cartAnimate[index]?.classList.remove('transfor_cart');
+    });
+});
 
-                // Update icon
-                icon.classList.remove('fa-regular');
-                icon.classList.add('fa-solid');
-            }
-            // Save updated favorites array to localStorage
-            localStorage.setItem('favorites', JSON.stringify(favorites));
-        });
+// Handle clicking the favorite icon
+fav_icon.forEach((icon, index) => {
+    icon.addEventListener('click', () => {
+        const product = products[index];
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const isFavorited = favorites.some(fav => fav.name === product.name);
+
+        if (isFavorited) {
+            favorites = favorites.filter(fav => fav.name !== product.name);
+            icon.classList.remove('fa-solid');
+            icon.classList.add('fa-regular');
+        } else {
+            favorites.push(product);
+            icon.classList.remove('fa-regular');
+            icon.classList.add('fa-solid');
+        }
+
+        localStorage.setItem('favorites', JSON.stringify(favorites));
     });
-}
+});
+
 // Optional: Load favorite state on page load
 document.addEventListener("DOMContentLoaded", () => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     fav_icon.forEach((icon, index) => {
         const product = products[index];
         const isFavorited = favorites.some(fav => fav.name === product.name);
-        // Set the icon to solid (filled heart) if product is in favorites
         if (isFavorited) {
             icon.classList.remove('fa-regular');
             icon.classList.add('fa-solid');
@@ -125,3 +122,97 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Filter functionality
+const filterButton = document.querySelectorAll(".link_inner button");
+const filterablecards = document.querySelectorAll(".coll_box");
+
+const filterCards = (e) => {
+    // Remove active class from the previously active filter button
+    document.querySelector(".active_filter_option")?.classList.remove("active_filter_option");
+    // Add active class to the clicked filter button
+    e.target.classList.add("active_filter_option");
+
+    let visibleCards = 0; // To keep track of visible cards
+
+    filterablecards.forEach(card => {
+        card.classList.add("remove_filterable_box"); // Initially hide all cards
+
+        // If 'all' is selected or the card matches the selected category, show it
+        if (e.target.dataset.name === "all" || card.dataset.name === e.target.dataset.name) {
+            card.classList.remove("remove_filterable_box");
+            visibleCards++;
+        }
+    });
+
+    // Check if no cards are visible, and display a message if necessary
+    if (visibleCards === 0) {
+        const noProductMessage = document.createElement("div");
+        noProductMessage.classList.add("no-product-message");
+        noProductMessage.textContent = "No products available in this category.";
+        container.appendChild(noProductMessage);  // Assuming `container` is where the products are displayed
+    } else {
+        // Remove "no products" message if any cards are visible
+        const existingMessage = document.querySelector(".no-product-message");
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+    }
+};
+
+// mobile devices
+
+// Add event listeners to filter buttons
+filterButton.forEach(button => button.addEventListener("click", filterCards));
+
+// Reference to the select dropdown
+const filterSelect = document.querySelector(".select_options");
+
+const filterCardsm = (e) => {
+    // Get the selected value from the <select> element
+    const selectedCategory = e.target.value;
+
+    // Find the currently active filter option (if any) and remove the active class
+    const activeOption = document.querySelector(".active_filter_option");
+    if (activeOption) {
+        activeOption.classList.remove("active_filter_option");
+    }
+
+    // Find the option with the selected value and add the active class to it
+    const selectedOption = Array.from(e.target.options).find(option => option.value === selectedCategory);
+    if (selectedOption) {
+        selectedOption.classList.add("active_filter_option");
+    }
+
+    let visibleCards = 0; // To track how many cards are visible
+
+    filterablecards.forEach(card => {
+        card.classList.add("remove_filterable_box"); // Initially hide all cards
+
+        // If 'all' is selected or the card matches the selected category, show it
+        if (selectedCategory === "all" || card.dataset.name === selectedCategory) {
+            card.classList.remove("remove_filterable_box");
+            visibleCards++;
+        }
+    });
+
+    // Check if no cards are visible, and display a message if necessary
+    const existingMessage = document.querySelector(".no-product-message");
+    if (visibleCards === 0) {
+        // Display message only if it doesn't already exist
+        if (!existingMessage) {
+            const noProductMessage = document.createElement("div");
+            noProductMessage.classList.add("no-product-message");
+            noProductMessage.textContent = "No products available in this category.";
+            container.appendChild(noProductMessage);  // Assuming `container` is where the products are displayed
+        }
+    } else {
+        // Remove "no products" message if any cards are visible
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+    }
+};
+
+// Add event listener to the select dropdown
+filterSelect.addEventListener("change", filterCardsm);

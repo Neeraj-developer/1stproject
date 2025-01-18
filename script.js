@@ -535,7 +535,7 @@ submitBtn.addEventListener('click', () => {
     }
 });
 
-
-
 // Call this function on page load
 window.onload = displayUserInfo;
+
+// filter btn option

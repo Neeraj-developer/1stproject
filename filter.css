@@ -43,9 +43,13 @@ select::-ms-expand {
     display: none; /* For Internet Explorer */
 }
 
-.link_inner .sel_link{
+.link_inner button{
     color: #fff;
     font-size: 15px;
+    border: none;
+    background-color: transparent;
+    transition: all .3s linear;
+    padding: 4px;
     cursor: pointer;
 }
 .sel_link_box .select_options{
